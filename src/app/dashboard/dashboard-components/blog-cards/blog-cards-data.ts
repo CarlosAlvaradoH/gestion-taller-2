@@ -8,28 +8,28 @@ export interface blogcard {
 export const blogcards: blogcard[] = [
 
     {
-        title: 'This is simple blog',
-        subtitle: '2 comments, 1 Like',
+        title: 'Sincronizacion Automotriz',
+        subtitle: 'Para sistemas tradicionales',
         subtext: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'assets/images/bg/bg1.jpg'
+        image: 'assets/images/bg/sincronizacion.jpg'
     },
     {
-        title: 'This is simple blog',
-        subtitle: '2 comments, 1 Like',
+        title: 'Reparacion y Mantenimiento',
+        subtitle: 'Mano de obra Calificada',
         subtext: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'assets/images/bg/bg2.jpg'
+        image: 'assets/images/bg/mantenimiento.jpg'
     },
     {
-        title: 'This is simple blog',
-        subtitle: '2 comments, 1 Like',
+        title: 'Certificados de Gases',
+        subtitle: 'Certificacion ISO 9002-34',
         subtext: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'assets/images/bg/bg3.jpg'
+        image: 'assets/images/bg/certificado.jpg'
     },
     {
-        title: 'This is simple blog',
-        subtitle: '2 comments, 1 Like',
+        title: 'Alineacion Y Balanceo',
+        subtitle: 'Vehiculos y Camionetas',
         subtext: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'assets/images/bg/bg4.jpg'
+        image: 'assets/images/bg/alineacion.jpg'
     },
 
 ] 
