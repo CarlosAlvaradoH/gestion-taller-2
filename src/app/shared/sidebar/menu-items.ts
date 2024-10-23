@@ -12,7 +12,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/component/alert',
-    title: 'Alert',
+    title: 'Alerta',
     icon: 'bi bi-bell',
     class: '',
     extralink: false,
