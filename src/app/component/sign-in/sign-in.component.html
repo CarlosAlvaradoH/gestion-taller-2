@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <h4 class="modal-title">Título del componente en el modal</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+<div class="modal-body">
+  <!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
+    <div>
+      <label for="firstName" class="form-label">First name</label>
+      <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
+      <div *ngIf="myForm.get('firstName')?.invalid && myForm.get('firstName')?.touched" class="invalid-feedback">
+        First name is required.
+      </div>
+    </div>
+    <div>
+      <label for="city" class="form-label">City</label>
+      <input type="text" class="form-control" id="city" formControlName="city" required>
+      <div *ngIf="myForm.get('city')?.invalid && myForm.get('city')?.touched" class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+      <div class="col-12">
+        <button class="btn btn-success" type="submit">Submit form</button>
+      </div>
+    </div>
+  </form> -->
+
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
+    <div class="col-12">
+      <label for="email" class="form-label">Correo</label>
+      <input type="text" class="form-control" id="email" formControlName="email" required>
+      <div *ngIf="!emailError" class="invalid-feedback">
+        First name is required.
+      </div>
+    </div>
+  
+    <div class="col-12">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password" required>
+      <div *ngIf="myForm.controls['password']?.invalid && myForm.controls['password']?.touched" class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+  
+    <!-- Alineación del botón -->
+    <div class="col-12 text-end"> <!-- Usa "text-end" para alinear el botón a la derecha -->
+      <button class="btn btn-success" type="submit">Ingresar</button>
+    </div>
+  </form>
+  
+
+</div>

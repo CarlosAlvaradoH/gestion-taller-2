@@ -1,5 +1,7 @@
-import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { Component, AfterViewInit, EventEmitter, Output, TemplateRef } from '@angular/core';
 import { NgbDropdownModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SignInComponent } from 'src/app/component/sign-in/sign-in.component';
+import { SignUpComponent } from 'src/app/component/sign-up/sign-up.component';
 
 declare var $: any;
 
@@ -15,6 +17,22 @@ export class NavigationComponent implements AfterViewInit {
   public showSearch = false;
 
   constructor(private modalService: NgbModal) {
+  }
+
+  signIn() {
+    this.modalService.open(SignInComponent, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      console.log(`Closed with: ${result}`);
+    }, (reason) => {
+      console.log(`Dismissed ${reason}`);
+    });
+  }
+
+  signUp() {
+    this.modalService.open(SignUpComponent, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      console.log(`Closed with: ${result}`);
+    }, (reason) => {
+      console.log(`Dismissed ${reason}`);
+    });
   }
 
   // This is for Notifications

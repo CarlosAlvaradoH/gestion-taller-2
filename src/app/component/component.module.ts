@@ -12,6 +12,8 @@ import { NgbdnavBasicComponent } from './nav/nav.component';
 import { NgbdButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from "./table/table.component";
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   imports: [
@@ -27,6 +29,10 @@ import { TableComponent } from "./table/table.component";
     NgbdButtonsComponent,
     CardsComponent,
     TableComponent
+  ],
+  declarations: [
+    SignUpComponent,
+    SignInComponent
   ],
 })
 export class ComponentsModule { }
