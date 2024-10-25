@@ -11,40 +11,40 @@ export interface Product {
 export const TopSelling: Product[] = [
 
     {
-        image: 'assets/images/users/user1.jpg',
-        uname: 'Hanna Gover',
-        gmail: 'hgover@gmail.com',
-        productName: 'Flexy React',
+        image: 'assets/images/tecnicos/mecanico5.jpg',
+        uname: 'Sergio Sandoval',
+        gmail: 'sandover@gmail.com',
+        productName: 'Tecnico en sincronizacion',
         status: 'danger',
-        weeks: 35,
-        budget: '95K'
+        weeks: 1,
+        budget: 'ocupado'
     },
     {
-        image: 'assets/images/users/user2.jpg',
-        uname: 'Hanna Gover',
-        gmail: 'hgover@gmail.com',
-        productName: 'Landing pro React',
-        status: 'info',
-        weeks: 35,
-        budget: '95K'
+        image: 'assets/images/tecnicos/mecanico7.jpg',
+        uname: 'Daniel Arevalo ',
+        gmail: 'daniel1234r@gmail.com',
+        productName: 'Mecanico general',
+        status: 'danger',
+        weeks: 2,
+        budget: 'ocupado'
     },
     {
-        image: 'assets/images/users/user3.jpg',
-        uname: 'Hanna Gover',
-        gmail: 'hgover@gmail.com',
-        productName: 'Elite React	',
-        status: 'warning',
-        weeks: 35,
-        budget: '95K'
+        image: 'assets/images/tecnicos/mecanico8.jpg',
+        uname: 'David Martinez',
+        gmail: 'martinez1254@gmail.com',
+        productName: 'Balanceo y alineacion',
+        status: 'danger',
+        weeks: 3,
+        budget: 'ocupado'
     },
     {
-        image: 'assets/images/users/user4.jpg',
-        uname: 'Hanna Gover',
-        gmail: 'hgover@gmail.com',
-        productName: 'Ample React',
+        image: 'assets/images/tecnicos/mecanico9.jpg',
+        uname: 'Andres Perez',
+        gmail: 'perezandres@gmail.com',
+        productName: 'Electrico',
         status: 'success',
-        weeks: 35,
-        budget: '95K'
+        weeks: 4,
+        budget: 'disponible'
     },
 
 ]
