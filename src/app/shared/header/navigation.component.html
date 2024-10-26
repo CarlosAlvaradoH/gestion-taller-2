@@ -41,13 +41,13 @@
   <!-- User profile and search -->
   <!-- ============================================================== -->
   <li class="nav-item">
-    <a class="nav-link waves-effect waves-dark" href="/dashboard">
-      <button class="btn btn-outline-success">Iniciar Sesion</button>
+    <a class="nav-link waves-effect waves-dark">
+      <button class="btn btn-outline-success" (click)="signIn()" >Iniciar Sesion</button>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link waves-effect waves-dark" href="/dashboard">
-      <button class="btn btn-outline-secondary">Registrase</button>
+    <a class="nav-link waves-effect waves-dark">
+      <button class="btn btn-outline-secondary" (click)="signUp()">Registrase</button>
     </a>
   </li>
   <li class="nav-item" ngbDropdown placement="bottom-end">
