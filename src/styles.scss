@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+/* styles.scss */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+/* centro-tecno-mecanica.component.css */
+.carousel-inner img {
+    max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
+    width: 100%; /* Asegura que la imagen ocupe el ancho completo */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+
