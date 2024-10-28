@@ -8,28 +8,28 @@ export interface topcard {
 export const topcards: topcard[] = [
 
     {
-        bgcolor: 'success',
+        bgcolor: 'dark',
         icon: 'bi bi-wallet',
-        title: '$21k',
-        subtitle: 'Yearly Earning'
+        title: '21900',
+        subtitle: 'Ventas anuales'
     },
     {
-        bgcolor: 'danger',
+        bgcolor: 'dark',
         icon: 'bi bi-coin',
-        title: '$1k',
-        subtitle: 'Refund given'
+        title: '%100',
+        subtitle: 'Clientes satisfechos'
     },
     {
-        bgcolor: 'warning',
+        bgcolor: 'dark',
         icon: 'bi bi-basket3',
-        title: '456',
-        subtitle: 'Yearly Project'
+        title: '4560',
+        subtitle: 'Peritajes certificados'
     },
     {
-        bgcolor: 'info',
+        bgcolor: 'dark',
         icon: 'bi bi-bag',
-        title: '210',
-        subtitle: 'Weekly Sales'
+        title: '%20',
+        subtitle: 'Descuento*'
     },
 
 ] 

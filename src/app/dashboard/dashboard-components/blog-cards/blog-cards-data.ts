@@ -10,7 +10,7 @@ export const blogcards: blogcard[] = [
     {
         title: 'Sincronizacion Automotriz',
         subtitle: 'Servicio especializado',
-        subtext: 'El servicio incluye limpieza de inyectores y/o carburador.',
+        subtext: 'El servicio incluye limpieza de inyectores y/o carburador, mano de obra calificada.',
         image: 'assets/images/bg/sincronizacion.jpg'
     },
     {

@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Título del componente en el modal</h4>
+  <h4 class="modal-title">!Bienvenido¡ , por favor introduzca su correo y contraseña</h4>
   <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
 </div>
 <div class="modal-body">
@@ -25,18 +25,18 @@
 
   <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
     <div class="col-12">
-      <label for="email" class="form-label">Correo</label>
+      <label for="email" class="form-label">Correo valido</label>
       <input type="text" class="form-control" id="email" formControlName="email" required>
       <div *ngIf="!emailError" class="invalid-feedback">
-        First name is required.
+        Por favor introduzca un correo valido.
       </div>
     </div>
   
     <div class="col-12">
-      <label for="password" class="form-label">Password</label>
+      <label for="password" class="form-label">Contraseña</label>
       <input type="password" class="form-control" id="password" formControlName="password" required>
       <div *ngIf="myForm.controls['password']?.invalid && myForm.controls['password']?.touched" class="invalid-feedback">
-        Please provide a valid city.
+       Por favor intruduzca una contraseña valida.
       </div>
     </div>
   

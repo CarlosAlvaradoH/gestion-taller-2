@@ -1,71 +1,71 @@
 <div class="modal-header">
-    <h4 class="modal-title">Título del componente en el modal</h4>
+    <h4 class="modal-title">Formulario de inscripcion</h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
   </div>
   <div class="modal-body">
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
       <div class="col-md-4">
-        <label for="firstName" class="form-label">First name</label>
+        <label for="firstName" class="form-label">Nombre</label>
         <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
         <div *ngIf="myForm.get('firstName')?.invalid && myForm.get('firstName')?.touched" class="invalid-feedback">
           First name is required.
         </div>
       </div>
       <div class="col-md-4">
-        <label for="lastName" class="form-label">Last name</label>
+        <label for="lastName" class="form-label">Apellido</label>
         <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
         <div *ngIf="myForm.get('lastName')?.invalid && myForm.get('lastName')?.touched" class="invalid-feedback">
-          Last name is required.
+          el apellido es un dato obligatorio.
         </div>
       </div>
       <div class="col-md-4">
-        <label for="username" class="form-label">Username</label>
+        <label for="username" class="form-label">Nombre de usuario</label>
         <div class="input-group has-validation">
-          <span class="input-group-text">@</span>
+          <span class="input-group-text">Correo</span>
           <input type="text" class="form-control" id="username" formControlName="username" required>
           <div *ngIf="myForm.get('username')?.invalid && myForm.get('username')?.touched" class="invalid-feedback">
-            Please choose a username.
+            Por favor escoja un nombre de usuario.
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <label for="city" class="form-label">City</label>
+        <label for="city" class="form-label">Ciudad</label>
         <input type="text" class="form-control" id="city" formControlName="city" required>
         <div *ngIf="myForm.get('city')?.invalid && myForm.get('city')?.touched" class="invalid-feedback">
-          Please provide a valid city.
+          Por favor ingrese una ciudad valida.
         </div>
       </div>
       <div class="col-md-3">
-        <label for="state" class="form-label">State</label>
+        <label for="state" class="form-label">Departamento</label>
         <select class="form-select" id="state" formControlName="state" required>
-          <option selected disabled value="">Choose...</option>
+          <option selected disabled value="">Elija...</option>
           <option>State 1</option>
           <option>State 2</option>
         </select>
         <div *ngIf="myForm.get('state')?.invalid && myForm.get('state')?.touched" class="invalid-feedback">
-          Please select a valid state.
+          Por favor introduzca un departamento valido.
         </div>
       </div>
       <div class="col-md-3">
-        <label for="zip" class="form-label">Zip</label>
+        <label for="zip" class="form-label">Correo</label>
         <input type="text" class="form-control" id="zip" formControlName="zip" required>
         <div *ngIf="myForm.get('zip')?.invalid && myForm.get('zip')?.touched" class="invalid-feedback">
-          Please provide a valid zip.
+          Por favor ingrese una dirección valida.
         </div>
       </div>
       <div class="col-12">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="agree" formControlName="agree" required>
           <label class="form-check-label" for="agree">
-            Agree to terms and conditions
+            Acepta terminos y condiciones.
           </label>
           <div *ngIf="myForm.get('agree')?.invalid && myForm.get('agree')?.touched" class="invalid-feedback">
-            You must agree before submitting.
+            Esta deacuerdo antes de enviar.
           </div>
         </div>
       </div>
       <div class="col-12">
-        <button class="btn btn-primary" type="submit">Submit form</button>
+        <button class="btn btn-primary" type="submit">Enviar formulario</button>
       </div>
     </form>
   
