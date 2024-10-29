@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, EventEmitter, Output, TemplateRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { NgbDropdownModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SignInComponent } from 'src/app/component/sign-in/sign-in.component';
 import { SignUpComponent } from 'src/app/component/sign-up/sign-up.component';
@@ -8,7 +9,7 @@ declare var $: any;
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports:[NgbDropdownModule],
+  imports:[NgbDropdownModule, CommonModule],
   templateUrl: './navigation.component.html'
 })
 export class NavigationComponent implements AfterViewInit {
@@ -34,6 +35,29 @@ export class NavigationComponent implements AfterViewInit {
       console.log(`Dismissed ${reason}`);
     });
   }
+
+  navbarItems: any [] = [
+    {
+      url: '/dashboard',
+      title: 'Inicio'
+    },
+    {
+      url: '/services',
+      title: 'Servicios'
+    },
+    {
+      url: '/admin',
+      title: 'admin'
+    },
+    {
+      url: '/user',
+      title: 'Agendar Servicio'
+    },
+    {
+      url: '/tec',
+      title: 'Ver mi Agenda'
+    },
+  ];
 
   // This is for Notifications
   notifications: Object[] = [

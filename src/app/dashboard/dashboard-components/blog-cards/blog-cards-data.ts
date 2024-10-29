@@ -8,28 +8,28 @@ export interface blogcard {
 export const blogcards: blogcard[] = [
 
     {
-        title: 'Sincronizacion Automotriz',
+        title: 'Sincronización Automotriz',
         subtitle: 'Servicio especializado',
-        subtext: 'El servicio incluye limpieza de inyectores y/o carburador, mano de obra calificada.',
+        subtext: 'Incluye limpieza de inyectores y/o carburador, con mano de obra calificada para un rendimiento óptimo.',
         image: 'assets/images/bg/sincronizacion.jpg'
     },
     {
-        title: 'Reparacion y Mantenimiento',
-        subtitle: 'Mano de obra Calificada',
-        subtext: 'Nuestor mecanicos cuentan con experiencia y mano de obra altamente calificada.',
+        title: 'Reparación y Mantenimiento',
+        subtitle: 'Mano de obra calificada',
+        subtext: 'Nuestros mecánicos cuentan con experiencia y están altamente calificados para brindar un servicio de calidad.',
         image: 'assets/images/bg/mantenimiento.jpg'
     },
     {
         title: 'Certificados de Gases',
-        subtitle: 'Certificacion ISO 9002-34',
-        subtext: 'Contamos con todas las certificaciones legales para brindar la mejor calidad y experiencia a nuestros usuarios.',
+        subtitle: 'Certificación ISO 9002-34',
+        subtext: 'Contamos con todas las certificaciones legales necesarias para ofrecer la mejor calidad y experiencia a nuestros clientes.',
         image: 'assets/images/bg/certificado.jpg'
     },
     {
-        title: 'Alineacion Y Balanceo',
-        subtitle: 'Vehiculos y Camionetas',
-        subtext: 'Utilizamos mauinaria de ultima tecnologia para garantizar todos nuestros servicios',
+        title: 'Alineación y Balanceo',
+        subtitle: 'Vehículos y camionetas',
+        subtext: 'Utilizamos maquinaria de última tecnología para garantizar un servicio preciso y confiable.',
         image: 'assets/images/bg/alineacion.jpg'
-    },
+    }
 
 ] 

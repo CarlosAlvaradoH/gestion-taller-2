@@ -14,6 +14,8 @@ import { CardsComponent } from './card/card.component';
 import { TableComponent } from "./table/table.component";
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { ServicesComponent } from './works/works.component';
+import { DashboardModule } from '../dashboard/dashboard.module';
 
 @NgModule({
   imports: [
@@ -28,11 +30,13 @@ import { SignInComponent } from './sign-in/sign-in.component';
     NgbdnavBasicComponent,
     NgbdButtonsComponent,
     CardsComponent,
-    TableComponent
+    TableComponent,
+    DashboardModule
   ],
   declarations: [
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    ServicesComponent
   ],
 })
 export class ComponentsModule { }
