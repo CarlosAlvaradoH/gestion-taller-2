@@ -1,14 +1,14 @@
-<main class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="col-md-12 col-lg-10">
+<main class="container d-flex justify-content-center align-items-center py-5">
+    <div class="col-md-12 col-lg-10 overflow-auto" style="max-height: 90vh;">
       <div class="text-center mb-4">
         <h1 class="h2">Centro de control</h1>
       </div>
   
-      <div class="card">
-        <div class="card-body text-center mb-4">
+      <div class="card mb-4">
+        <div class="card-body text-center">
           <!-- title -->
-          <h4 class="card-title text-center"><strong>Lista de mecánicos</strong></h4>
-          <h5 class="card-subtitle text-center mb-4"><strong>Tabla de turnos</strong></h5>
+          <h4 class="card-title"><strong>Lista de mecánicos</strong></h4>
+          <h5 class="card-subtitle mb-4"><strong>Tabla de turnos</strong></h5>
           <!-- title -->
           <div class="table-responsive">
             <table class="table align-middle">
@@ -53,9 +53,9 @@
         </div>
       </div>
   
-      <div class="text-center mt-2">
+      <div class="text-center mt-4">
         <h2>Status del taller</h2>
-        <div class="tabla-mecanicos">
+        <div class="tabla-mecanicos mt-4">
           <h2>Estado de Tareas de los Mecánicos</h2>
           <div class="table-responsive">
             <table class="table align-middle">
@@ -73,24 +73,16 @@
                 <tr *ngFor="let mecanico of mecanicos">
                   <td>{{ mecanico.nombre }}</td>
                   <td>
-                    <input type="checkbox" 
-                           
-                           (change)="calcularPorcentaje(mecanico)" />
+                    <input type="checkbox" (change)="calcularPorcentaje(mecanico)" />
                   </td>
                   <td>
-                    <input type="checkbox" 
-                          
-                           (change)="calcularPorcentaje(mecanico)" />
+                    <input type="checkbox" (change)="calcularPorcentaje(mecanico)" />
                   </td>
                   <td>
-                    <input type="checkbox" 
-                           
-                           (change)="calcularPorcentaje(mecanico)" />
+                    <input type="checkbox" (change)="calcularPorcentaje(mecanico)" />
                   </td>
                   <td>
-                    <input type="checkbox" 
-                           
-                           (change)="calcularPorcentaje(mecanico)" />
+                    <input type="checkbox" (change)="calcularPorcentaje(mecanico)" />
                   </td>
                   <td>{{ mecanico.porcentaje }}%</td>
                 </tr>
