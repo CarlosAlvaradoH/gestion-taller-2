@@ -1,0 +1,46 @@
+.tabla-mecanicos {
+    width: 100%;
+    max-width: 800px;        /* Ancho máximo de la tabla */
+    margin: 40px auto;       /* Margen automático para centrar y separación arriba y abajo */
+    padding: 20px;           /* Padding uniforme para separación interna */
+    text-align: center;      /* Alineación centrada del texto */
+    border: 1px solid #ddd;  /* Opcional: Agrega un borde alrededor de la tabla */
+    border-radius: 8px;      /* Opcional: Bordes redondeados */
+    background-color: #f9f9f9; /* Opcional: Color de fondo suave */
+  }
+  
+
+.tabla-mecanicos h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+thead, tbody, tr {
+  display: contents;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}

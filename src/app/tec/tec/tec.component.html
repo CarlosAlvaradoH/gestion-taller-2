@@ -1,1 +1,23 @@
-<p>tec works!</p>
+
+<!-- src/app/dashboard/dashboard.component.html -->
+<div class="agenda-container">
+    <div class="tagenda">
+    <h1>Agenda de tareas diarias</h1>
+    </div>
+    <div *ngFor="let mecanico of mecanicos" class="mechanic-tasks">
+      <h2>{{ mecanico.nombre }}</h2>
+      <ul class="task-list">
+        <li *ngFor="let tarea of mecanico.tareas" [class.completed]="tarea.completada">
+          {{ tarea.nombre }}
+          <button class="task-button" (click)="completarTarea(tarea)">
+            {{ tarea.completada ? 'Desmarcar' : 'Completar' }}
+          </button>
+        </li>
+      </ul>
+      <div class="add-task">
+        <input #tareaInput type="text" placeholder="Nueva tarea para {{ mecanico.nombre }}">
+        <button (click)="agregarTarea(mecanico, tareaInput.value); tareaInput.value=''">Agregar Tarea</button>
+      </div>
+    </div>
+  </div>
+  

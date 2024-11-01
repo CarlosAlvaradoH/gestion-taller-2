@@ -1,77 +1,104 @@
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">Centro de control</h1>
-    </div>
-
-  
-
-
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<main class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="col-md-12 col-lg-10">
+      <div class="text-center mb-4">
         <h1 class="h2">Centro de control</h1>
       </div>
   
       <div class="card">
-        <div class="card-body">
-            <!-- title -->
-            <h4 class="card-title"><strong>Lista de mecanicos</strong></h4>
-            <h5 class="card-subtitle"><strong>Tabla de turnos</strong></h5>
-  
-            <!-- title -->
-            <div class="table-responsive">
-                <table class="table align-middle">
-                    <thead>
-                        <tr>
-                            <th class="text-dark font-medium fs-4">Tecnico</th>
-                            <th class="text-dark font-medium fs-4">Ocupacion-Tecnica</th>
-                            <th class="text-dark font-medium fs-4">Disponibilidad</th>
-                            <th class="text-dark font-medium fs-4">Turno</th>
-                            <th class="text-dark font-medium fs-4">Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Repetir cada técnico en la lista topSelling -->
-                        <tr *ngFor="let ts of topSelling">
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img [src]="ts.image" alt="user" width="45" class="rounded-circle">
-                                    <div class="ms-3">
-                                        <h5 class="mb-0 font-medium">{{ ts.uname }}</h5>
-                                        <span>{{ ts.gmail }}</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="fs-4">{{ ts.productName }}</td>
-                            <td>
-                                <!-- Cambia el color de fondo basado en el estado -->
-                                <span [ngClass]="{'bg-danger': ts.status === 'danger', 'bg-success': ts.status === 'success'}" 
-                                      class="p-2 rounded-circle d-inline-block ms-3">
-                                </span>
-                            </td>
-                            <td>
-                                <h5 class="mb-0 fw-normal">{{ ts.weeks }}</h5>
-                            </td>
-                            <td>
-                                <h5 class="mb-0 fw-normal">{{ ts.budget }}</h5>
-                            </td>
-                        </tr>              
-                    </tbody>
-                </table>
-            </div>
+        <div class="card-body text-center mb-4">
+          <!-- title -->
+          <h4 class="card-title text-center"><strong>Lista de mecánicos</strong></h4>
+          <h5 class="card-subtitle text-center mb-4"><strong>Tabla de turnos</strong></h5>
+          <!-- title -->
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th class="text-dark font-medium fs-5">Técnico</th>
+                  <th class="text-dark font-medium fs-5">Ocupación-Técnica</th>
+                  <th class="text-dark font-medium fs-5">Disponibilidad</th>
+                  <th class="text-dark font-medium fs-5">Turno</th>
+                  <th class="text-dark font-medium fs-5">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Repetir cada técnico en la lista topSelling -->
+                <tr *ngFor="let ts of topSelling">
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img [src]="ts.image" alt="user" width="45" class="rounded-circle">
+                      <div class="ms-3">
+                        <h5 class="mb-0 font-medium">{{ ts.uname }}</h5>
+                        <span>{{ ts.gmail }}</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="fs-5">{{ ts.productName }}</td>
+                  <td>
+                    <!-- Cambia el color de fondo basado en el estado -->
+                    <span [ngClass]="{'bg-danger': ts.status === 'danger', 'bg-success': ts.status === 'success'}" 
+                          class="p-2 rounded-circle d-inline-block ms-3">
+                    </span>
+                  </td>
+                  <td>
+                    <h5 class="mb-0 fw-normal">{{ ts.weeks }}</h5>
+                  </td>
+                  <td>
+                    <h5 class="mb-0 fw-normal">{{ ts.budget }}</h5>
+                  </td>
+                </tr>              
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
   
-      <h2>Section title</h2>
+      <div class="text-center mt-2">
+        <h2>Status del taller</h2>
+        <div class="tabla-mecanicos">
+          <h2>Estado de Tareas de los Mecánicos</h2>
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>Mecánico</th>
+                  <th>Cambio de Aceite</th>
+                  <th>Revisión de Luces</th>
+                  <th>Revisión Técnico-mecánica</th>
+                  <th>Cambio de Batería</th>
+                  <th>Porcentaje Completo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let mecanico of mecanicos">
+                  <td>{{ mecanico.nombre }}</td>
+                  <td>
+                    <input type="checkbox" 
+                           
+                           (change)="calcularPorcentaje(mecanico)" />
+                  </td>
+                  <td>
+                    <input type="checkbox" 
+                          
+                           (change)="calcularPorcentaje(mecanico)" />
+                  </td>
+                  <td>
+                    <input type="checkbox" 
+                           
+                           (change)="calcularPorcentaje(mecanico)" />
+                  </td>
+                  <td>
+                    <input type="checkbox" 
+                           
+                           (change)="calcularPorcentaje(mecanico)" />
+                  </td>
+                  <td>{{ mecanico.porcentaje }}%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   
-
-
-
-
-
-
-
-
-    <h2>Section title</h2>
-   
-  </main>
