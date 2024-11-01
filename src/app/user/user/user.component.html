@@ -1,1 +1,93 @@
-<p>user works!</p>
+
+<div class="service-selection-wrapper my-4">
+    <!-- Carrusel de Clases de Vehículos -->
+    <div id="vehicleCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../../../assets/images/users/sedan.jpg" class="d-block w-100" alt="Sedán">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Sedán</h5>
+                    <p>Vehículo de uso diario, perfecto para familias.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/images/users/suv.jpg" class="d-block w-100" alt="SUV">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>SUV</h5>
+                    <p>Vehículo deportivo utilitario ideal para todo terreno.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/images/users/truck.jpg" class="d-block w-100" alt="Camioneta">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Camioneta</h5>
+                    <p>Perfecta para transporte de carga y grandes viajes.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#vehicleCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#vehicleCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <!-- Tabla de Selección de Servicios -->
+    <h2 class="text-center mb-3">Selecciona un Servicio</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>Servicio</th>
+                    <th>Descripción</th>
+                    <th>Seleccionar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Certificación Técnico-Mecánica</td>
+                    <td>Garantiza que tu vehículo cumple con los estándares de seguridad y rendimiento.</td>
+                    <td><input type="checkbox" name="servicio" value="certificacion"></td>
+                </tr>
+                <tr>
+                    <td>Cambio de Aceite</td>
+                    <td>Mantén el motor de tu vehículo en óptimas condiciones con un cambio de aceite profesional.</td>
+                    <td><input type="checkbox" name="servicio" value="cambio_aceite"></td>
+                </tr>
+                <tr>
+                    <td>Balanceo</td>
+                    <td>Asegura un desgaste uniforme de los neumáticos y una conducción suave.</td>
+                    <td><input type="checkbox" name="servicio" value="balanceo"></td>
+                </tr>
+                <tr>
+                    <td>Revisión de Luces y Eléctrica</td>
+                    <td>Verificación de luces y sistema eléctrico para tu seguridad y visibilidad.</td>
+                    <td><input type="checkbox" name="servicio" value="revision_luces"></td>
+                </tr>
+                <tr>
+                    <td>Sincronización</td>
+                    <td>Ajusta el motor para un rendimiento óptimo y eficiencia de combustible.</td>
+                    <td><input type="checkbox" name="servicio" value="sincronizacion"></td>
+                </tr>
+                <tr>
+                    <td>Revisión Eléctrica</td>
+                    <td>Verifica el estado de toda la red eléctrica y el sistema de computadora del vehículo.</td>
+                    <td><input type="checkbox" name="servicio" value="electrica"></td>
+                </tr>
+                <tr>
+                    <td>Revisión de Frenos</td>
+                    <td>Inspecciona el estado de las pastillas y discos de freno para garantizar la seguridad.</td>
+                    <td><input type="checkbox" name="servicio" value="frenos"></td>
+                </tr>
+                <tr>
+                    <td>Certificado de Revisión Técnico Mecánica</td>
+                    <td>Verifica que el vehículo esté en condiciones óptimas para circular en las vías públicas.</td>
+                    <td><input type="checkbox" name="servicio" value="certificado_tecnico"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+.service-selection-wrapper {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.service-selection-wrapper .table-responsive {
+    max-height: 300px; /* Limita la altura de la tabla */
+    overflow-y: auto; /* Hace scroll vertical */
+}
+
+.service-selection-wrapper h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
