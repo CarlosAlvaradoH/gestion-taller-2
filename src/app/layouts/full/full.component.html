@@ -20,7 +20,7 @@
       <div
         class="navbar-header"
         [ngClass]="expandLogo ? 'expand-logo' : ''"
-        data-logobg="skin6"
+        data-logobg="skin4"
       >
         <!-- Button to toggle sidebar on mobile -->
         <a
@@ -35,35 +35,13 @@
         <!-- ============================================================== -->
         <!-- Logo -->
         <!-- ============================================================== -->
-        <a class="navbar-brand" href="/">
-          <span class="logo-text">
-            <img
-              src="../../../assets/images/users/user4.jpg"
-              class="dark-logo"
-              alt="homepage"
-              width="240"  
-              height="100" 
-            />
-          </span>
-        </a>
+       
         <!-- ============================================================== -->
         <!-- End Logo -->
         <!-- ============================================================== -->
         
         <!-- Button to collapse the navbar on mobile -->
-        <a
-          class="topbartoggler d-block d-lg-none waves-effect waves-light"
-          href="javascript:void(0)"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          (click)="isCollapsed = !isCollapsed"
-          [attr.aria-expanded]="!isCollapsed"
-        >
-          <i class="bi bi-text-right fs-4"></i>
-        </a>
+        
       </div>
 
       <!-- ============================================================== -->
@@ -72,12 +50,12 @@
       <div
         class="navbar-collapse collapse"
         id="navbarSupportedContent"
-        data-navbarbg="skin6"
+        data-navbarbg="skin4"
         [ngbCollapse]="!isCollapsed"
       >
         <app-navigation
           (toggleSidebar)="toggleSidebarType()"
-          class="w-100"
+          class="w-120"
           style="height: 120px; line-height: 10px; padding: auto;"
         ></app-navigation>
       </div>
@@ -88,13 +66,34 @@
   <!-- Left Sidebar - style you can find in sidebar.scss  -->
   <!-- ============================================================== -->
   <aside
-    class="left-sidebar fs-4"
-    data-sidebarbg="skin6"
-    (mouseover)="Logo()"
-    (mouseout)="Logo()"
-  >
-    <app-sidebar></app-sidebar>
-  </aside>
+  class="left-sidebar fs-7"
+  data-sidebarbg="skin6"
+  (mouseover)="Logo()"
+  (mouseout)="Logo()"
+>
+<div class="testimonio" style="padding: 10px; font-size: 0.65em; max-width: 100%; overflow-y: auto; height: 750px;">
+  <h6 style="font-weight: bold; margin-bottom: 8px;">Testimonios de clientes</h6>
+  
+  <p style="margin: 5px 0;">
+    <strong>Luis P.:</strong> "Destacó el enfoque minucioso de Tecno Master en la revisión del motor y la batería, además de la profesionalidad de los técnicos y las explicaciones claras que le brindaron durante el proceso. Se sintió seguro sobre la confiabilidad de la certificación que recibió."
+  </p>
+  
+  <p style="margin: 5px 0;">
+    <strong>María G.:</strong> "Apreció el servicio eficiente en la alineación y revisión de luces. Mencionó que la atención al detalle del equipo le dio confianza al conducir y se sintió bien informada sobre el estado de su vehículo tras la revisión."
+  </p>
+  
+  <p style="margin: 5px 0;">
+    <strong>Carlos M.:</strong> "Excelente servicio en la revisión de frenos y suspensión. Me explicaron detalladamente el proceso y las recomendaciones para el mantenimiento de mi vehículo. Salí muy satisfecho y confiado en la seguridad de mi auto."
+  </p>
+  
+  <p style="margin: 5px 0;">
+    <strong>Ana R.:</strong> "Quedé impresionada con la atención rápida y efectiva. Necesitaba una revisión urgente antes de un viaje, y el equipo de Tecno Master fue muy comprensivo y me atendieron con prontitud. Sin duda, volveré por su profesionalismo."
+  </p>
+</div>
+
+  <app-sidebar></app-sidebar>
+</aside>
+
   <!-- ============================================================== -->
   <!-- End Left Sidebar - style you can find in sidebar.scss  -->
   <!-- ============================================================== -->
