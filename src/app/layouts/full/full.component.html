@@ -11,6 +11,7 @@
   data-sidebar-position="absolute"
   data-header-position="absolute"
   data-boxed-layout="full"
+  style="display: flex; flex-direction: column; align-items: center; width: 100%;"
 >
   <!-- ============================================================== -->
   <!-- Topbar header - style you can find in topbar.scss -->
@@ -29,19 +30,7 @@
           href="javascript:void(0)"
         >
           <i [ngClass]="showMobileMenu ? 'bi bi-text-left fs-5' : 'bi bi-text-left fs-5'"></i>
-          
         </a>
-        
-        <!-- ============================================================== -->
-        <!-- Logo -->
-        <!-- ============================================================== -->
-       
-        <!-- ============================================================== -->
-        <!-- End Logo -->
-        <!-- ============================================================== -->
-        
-        <!-- Button to collapse the navbar on mobile -->
-        
       </div>
 
       <!-- ============================================================== -->
@@ -63,45 +52,9 @@
   </header>
   
   <!-- ============================================================== -->
-  <!-- Left Sidebar - style you can find in sidebar.scss  -->
-  <!-- ============================================================== -->
-  <aside
-  class="left-sidebar fs-7"
-  data-sidebarbg="skin6"
-  (mouseover)="Logo()"
-  (mouseout)="Logo()"
->
-<div class="testimonio" style="padding: 10px; font-size: 0.65em; max-width: 100%; overflow-y: auto; height: 750px;">
-  <h6 style="font-weight: bold; margin-bottom: 8px;">Testimonios de clientes</h6>
-  
-  <p style="margin: 5px 0;">
-    <strong>Luis P.:</strong> "Destacó el enfoque minucioso de Tecno Master en la revisión del motor y la batería, además de la profesionalidad de los técnicos y las explicaciones claras que le brindaron durante el proceso. Se sintió seguro sobre la confiabilidad de la certificación que recibió."
-  </p>
-  
-  <p style="margin: 5px 0;">
-    <strong>María G.:</strong> "Apreció el servicio eficiente en la alineación y revisión de luces. Mencionó que la atención al detalle del equipo le dio confianza al conducir y se sintió bien informada sobre el estado de su vehículo tras la revisión."
-  </p>
-  
-  <p style="margin: 5px 0;">
-    <strong>Carlos M.:</strong> "Excelente servicio en la revisión de frenos y suspensión. Me explicaron detalladamente el proceso y las recomendaciones para el mantenimiento de mi vehículo. Salí muy satisfecho y confiado en la seguridad de mi auto."
-  </p>
-  
-  <p style="margin: 5px 0;">
-    <strong>Ana R.:</strong> "Quedé impresionada con la atención rápida y efectiva. Necesitaba una revisión urgente antes de un viaje, y el equipo de Tecno Master fue muy comprensivo y me atendieron con prontitud. Sin duda, volveré por su profesionalismo."
-  </p>
-</div>
-
-  <app-sidebar></app-sidebar>
-</aside>
-
-  <!-- ============================================================== -->
-  <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-  <!-- ============================================================== -->
-
-  <!-- ============================================================== -->
   <!-- Page wrapper for main content -->
   <!-- ============================================================== -->
-  <div class="page-wrapper">
+  <div class="page-wrapper" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
     <!-- ============================================================== -->
     <!-- Container fluid for page content -->
     <!-- ============================================================== -->
@@ -123,8 +76,8 @@
     <!-- ============================================================== -->
     <footer class="footer text-center">
       Todos los derechos reservados, TALENTO TECH 2024.
-      
     </footer>
+    
     <!-- ============================================================== -->
     <!-- End footer -->
 

@@ -3,14 +3,14 @@ import { Component, OnInit, HostListener } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
 import { NgbCollapseModule } from "@ng-bootstrap/ng-bootstrap";
 import { NavigationComponent } from "src/app/shared/header/navigation.component";
-import { SidebarComponent } from "src/app/shared/sidebar/sidebar.component";
+
 
 //declare var $: any;
 
 @Component({
   selector: "app-full-layout",
   standalone: true,
-  imports:[RouterModule, SidebarComponent, NavigationComponent, CommonModule, NgbCollapseModule],
+  imports:[RouterModule, NavigationComponent, CommonModule, NgbCollapseModule],
   templateUrl: "./full.component.html",
   styleUrls: ["./full.component.scss"],
 })
