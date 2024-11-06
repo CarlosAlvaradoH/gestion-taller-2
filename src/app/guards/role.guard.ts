@@ -10,8 +10,16 @@ export class RoleGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+
+    if(!this.authService.isLoggedIn()){
+      this.router.navigate(['/dashboard']); // Redirige a login si no cumple con el rol
+      return false;
+    };
+
     const expectedRole = route.data['role'];
     const userRole = this.authService.getUser().role;
+
+    console.log("Aca es: ", expectedRole , " ",userRole )
 
     if (!this.authService.isLoggedIn() || userRole !== expectedRole) {
       this.router.navigate(['/dashboard']); // Redirige a login si no cumple con el rol

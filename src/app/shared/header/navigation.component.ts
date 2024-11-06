@@ -5,6 +5,7 @@ import { SignInComponent } from 'src/app/component/sign-in/sign-in.component';
 import { SignUpComponent } from 'src/app/component/sign-up/sign-up.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/interfaces/userInterface';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -22,7 +23,8 @@ export class NavigationComponent implements OnInit, AfterViewInit {
 
   constructor(
     private modalService: NgbModal,
-    private authSv: AuthService  
+    private authSv: AuthService,
+    private router: Router 
   ) {
   }
 
@@ -53,6 +55,7 @@ export class NavigationComponent implements OnInit, AfterViewInit {
   logout(){
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    this.router.navigate(['/dashboard']);
     window.location.reload();
   }
 
