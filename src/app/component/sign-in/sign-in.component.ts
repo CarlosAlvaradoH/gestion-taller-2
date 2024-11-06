@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -15,7 +16,8 @@ export class SignInComponent implements OnInit {
 
   constructor(
     public activeModal: NgbActiveModal,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private UserSv: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -30,6 +32,7 @@ export class SignInComponent implements OnInit {
     // Método que se llama cuando el formulario se envía
     onSubmit() {
       if (this.myForm.valid) {
+        this.UserSv.login(this.myForm.value);
         console.log('Formulario enviado con éxito:', this.myForm.value);
         console.log('El form: ', this.myForm.controls);
         this.close();

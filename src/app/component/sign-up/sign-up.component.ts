@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,19 +14,18 @@ export class SignUpComponent {
 
   constructor(
     public activeModal: NgbActiveModal,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private userSv: AuthService
   ) {}
 
   ngOnInit(): void {
     
     this.myForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      username: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
-      zip: ['', Validators.required],
-      agree: [false, Validators.requiredTrue]
+      name: ['', Validators.required],
+      last_name: ['', Validators.required],
+      document: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required]
     });
     
   };
@@ -34,6 +34,7 @@ export class SignUpComponent {
     onSubmit() {
       if (this.myForm.valid) {
         console.log('Formulario enviado con éxito:', this.myForm.value);
+        this.userSv.register(this.myForm.value);
       } else {
         console.log('El formulario es inválido');
         console.log('El form: ', this.myForm.controls['firstName']);

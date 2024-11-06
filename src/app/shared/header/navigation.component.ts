@@ -1,8 +1,10 @@
-import { Component, AfterViewInit, EventEmitter, Output, TemplateRef } from '@angular/core';
+import { Component, AfterViewInit, EventEmitter, Output, TemplateRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbDropdownModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SignInComponent } from 'src/app/component/sign-in/sign-in.component';
 import { SignUpComponent } from 'src/app/component/sign-up/sign-up.component';
+import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/interfaces/userInterface';
 
 declare var $: any;
 
@@ -12,12 +14,24 @@ declare var $: any;
   imports:[NgbDropdownModule, CommonModule],
   templateUrl: './navigation.component.html'
 })
-export class NavigationComponent implements AfterViewInit {
+export class NavigationComponent implements OnInit, AfterViewInit {
   @Output() toggleSidebar = new EventEmitter<void>();
 
   public showSearch = false;
+  public user: User | null = null
 
-  constructor(private modalService: NgbModal) {
+  constructor(
+    private modalService: NgbModal,
+    private authSv: AuthService  
+  ) {
+  }
+
+  ngOnInit(): void {
+    if(this.authSv.isLoggedIn()){
+      this.user = this.authSv.getUser();
+      let {role} = this.authSv.getUser();
+      this.setUserOptions(role);
+    }
   }
 
   signIn() {
@@ -36,6 +50,12 @@ export class NavigationComponent implements AfterViewInit {
     });
   }
 
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    window.location.reload();
+  }
+
   navbarItems: any [] = [
     {
       url: '/dashboard',
@@ -44,20 +64,24 @@ export class NavigationComponent implements AfterViewInit {
     {
       url: '/services',
       title: 'Servicios'
-    },
-    {
-      url: '/admin',
-      title: 'admin'
-    },
-    {
-      url: '/user',
-      title: 'Agendar Servicio'
-    },
-    {
-      url: '/tec',
-      title: 'Ver mi Agenda'
-    },
+    }
   ];
+
+  setUserOptions(role: string) {
+    switch (role) {
+      case 'Admin':
+        this.navbarItems.push({ url: '/admin', title: 'Administracion' })
+        break;
+      case 'POST':
+        this.navbarItems.push({ url: '/tec', title: 'Ver Agenda' })
+        break;
+      case 'Client':
+        this.navbarItems.push({ url: '/user', title: 'Agendar Servicio' })
+        break;
+      default:
+        return
+    }
+  }
 
   // This is for Notifications
   notifications: Object[] = [

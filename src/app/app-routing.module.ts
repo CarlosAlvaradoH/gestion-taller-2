@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
 import { ServicesComponent } from './component/works/works.component';
+import { RoleGuard } from './guards/role.guard';
 
 export const Approutes: Routes = [
   {
@@ -24,15 +25,21 @@ export const Approutes: Routes = [
       },
       {
         path: 'admin',
-        loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+        loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+        canActivate: [RoleGuard],
+        data: { role: 'Admin' }
       },
       {
         path: 'tec',
-        loadChildren: () => import('./tec/tec.module').then(m => m.TecModule)
+        loadChildren: () => import('./tec/tec.module').then(m => m.TecModule),
+        canActivate: [RoleGuard],
+        data: { role: 'Tecnico' }
       },
       {
         path: 'user',
-        loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+        loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+        canActivate: [RoleGuard],
+        data: { role: 'Client' }
       },
       {
         path: "services",
@@ -42,6 +49,6 @@ export const Approutes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/starter'
+    redirectTo: '/dashboard'
   }
 ];

@@ -5,63 +5,40 @@
   <div class="modal-body">
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
       <div class="col-md-4">
-        <label for="firstName" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
-        <div *ngIf="myForm.get('firstName')?.invalid && myForm.get('firstName')?.touched" class="invalid-feedback">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" formControlName="name" required>
+        <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched" class="invalid-feedback">
           First name is required.
         </div>
       </div>
       <div class="col-md-4">
-        <label for="lastName" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
-        <div *ngIf="myForm.get('lastName')?.invalid && myForm.get('lastName')?.touched" class="invalid-feedback">
+        <label for="last_name" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="last_name" formControlName="last_name" required>
+        <div *ngIf="myForm.get('last_name')?.invalid && myForm.get('last_name')?.touched" class="invalid-feedback">
           el apellido es un dato obligatorio.
         </div>
       </div>
       <div class="col-md-4">
-        <label for="username" class="form-label">Nombre de usuario</label>
+        <label for="document" class="form-label">Numero Documento</label>
         <div class="input-group has-validation">
-          <span class="input-group-text">Correo</span>
-          <input type="text" class="form-control" id="username" formControlName="username" required>
-          <div *ngIf="myForm.get('username')?.invalid && myForm.get('username')?.touched" class="invalid-feedback">
+          <input type="number" class="form-control" id="document" formControlName="document" required>
+          <div *ngIf="myForm.get('document')?.invalid && myForm.get('document')?.touched" class="invalid-feedback">
             Por favor escoja un nombre de usuario.
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <label for="city" class="form-label">Ciudad</label>
-        <input type="text" class="form-control" id="city" formControlName="city" required>
-        <div *ngIf="myForm.get('city')?.invalid && myForm.get('city')?.touched" class="invalid-feedback">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" formControlName="email" required>
+        <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched" class="invalid-feedback">
           Por favor ingrese una ciudad valida.
         </div>
       </div>
       <div class="col-md-3">
-        <label for="state" class="form-label">Departamento</label>
-        <select class="form-select" id="state" formControlName="state" required>
-          <option selected disabled value="">Elija...</option>
-          <option>State 1</option>
-          <option>State 2</option>
-        </select>
-        <div *ngIf="myForm.get('state')?.invalid && myForm.get('state')?.touched" class="invalid-feedback">
-          Por favor introduzca un departamento valido.
-        </div>
-      </div>
-      <div class="col-md-3">
-        <label for="zip" class="form-label">Correo</label>
-        <input type="text" class="form-control" id="zip" formControlName="zip" required>
-        <div *ngIf="myForm.get('zip')?.invalid && myForm.get('zip')?.touched" class="invalid-feedback">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password" formControlName="password" required>
+        <div *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched" class="invalid-feedback">
           Por favor ingrese una dirección valida.
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="agree" formControlName="agree" required>
-          <label class="form-check-label" for="agree">
-            Acepta terminos y condiciones.
-          </label>
-          <div *ngIf="myForm.get('agree')?.invalid && myForm.get('agree')?.touched" class="invalid-feedback">
-            Esta deacuerdo antes de enviar.
-          </div>
         </div>
       </div>
       <div class="col-12">

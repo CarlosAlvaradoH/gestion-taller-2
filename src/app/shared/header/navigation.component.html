@@ -13,19 +13,22 @@
 <!-- Right side toggle and nav items -->
 <!-- ============================================================== -->
 <ul class="navbar-nav float-end">
-  <!-- ============================================================== -->
-  <!-- User profile and search -->
-  <!-- ============================================================== -->
+ <!-- Mostrar si el usuario NO está logueado -->
+ <ng-container *ngIf="!user; else loggedInTemplate">
   <li class="nav-item">
     <a class="nav-link waves-effect waves-dark">
-      <button class="btn btn-outline-success" (click)="signIn()" >Iniciar Sesion</button>
+      <button class="btn btn-outline-success" (click)="signIn()">Iniciar Sesion</button>
     </a>
   </li>
   <li class="nav-item">
     <a class="nav-link waves-effect waves-dark">
-      <button class="btn btn-outline-secondary" (click)="signUp()">Registrase</button>
+      <button class="btn btn-outline-secondary" (click)="signUp()">Registrarse</button>
     </a>
   </li>
+</ng-container>
+
+<!-- Template a mostrar si el usuario SÍ está logueado -->
+<ng-template #loggedInTemplate>
   <li class="nav-item" ngbDropdown placement="bottom-end">
     <a
       ngbDropdownToggle
@@ -41,16 +44,13 @@
         class="rounded-circle"
         width="100"
       />
-      <span class="ms-2"><strong>Tecno Master</strong></span>
+      <span class="ms-2"><strong>{{user!.name}} {{user!.last_name}}</strong></span>
     </a>
     <div class="dropdown-menu-right" ngbDropdownMenu>
-      
-      <a class="dropdown-item " href="javascript:void(0)"> Configuracion</a>
+      <a class="dropdown-item" href="javascript:void(0)">Ver Mi Historial</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="javascript:void(0)"> Cerrar seccion</a>
+      <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">Cerrar sesión</a>
     </div>
   </li>
-  <!-- ============================================================== -->
-  <!-- User profile and search -->
-  <!-- ============================================================== -->
+</ng-template>
 </ul>
