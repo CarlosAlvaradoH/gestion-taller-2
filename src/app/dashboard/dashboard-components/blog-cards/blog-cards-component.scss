@@ -12,12 +12,16 @@
     border: 1px solid #ddd;
     overflow: hidden;
     margin-bottom: 15px;
+    padding: 10px; /* Espacio interno para el contenido */
+    border-radius: 10px; /* Bordes redondeados en toda la tarjeta */
 }
 
 .card-img-top {
-    height: 150px; /* Fixed height for testimonial images */
-    object-fit: cover; /* Ensures image covers area uniformly */
     width: 100%;
+    height: auto;
+    border-radius: 50%; /* Hace la imagen redonda */
+    object-fit: cover; /* Asegura que la imagen mantenga proporción */
+    margin-bottom: 10px; /* Espacio entre imagen y contenido */
 }
 
 .card-body {
