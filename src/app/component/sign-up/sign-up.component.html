@@ -4,22 +4,22 @@
   </div>
   <div class="modal-body">
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
-      <div class="col-md-4">
-        <label for="name" class="form-label">Nombre</label>
+      <div class="col-md-6">
+        <label for="name" class="form-label">Nombre       </label>
         <input type="text" class="form-control" id="name" formControlName="name" required>
         <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched" class="invalid-feedback">
           First name is required.
         </div>
       </div>
-      <div class="col-md-4">
-        <label for="last_name" class="form-label">Apellido</label>
+      <div class="col-md-6">
+        <label for="last_name" class="form-label">Apellido         </label>
         <input type="text" class="form-control" id="last_name" formControlName="last_name" required>
         <div *ngIf="myForm.get('last_name')?.invalid && myForm.get('last_name')?.touched" class="invalid-feedback">
           el apellido es un dato obligatorio.
         </div>
       </div>
-      <div class="col-md-4">
-        <label for="document" class="form-label">Numero Documento</label>
+      <div class="col-md-6">
+        <label for="document" class="form-label">Numero Documento          </label>
         <div class="input-group has-validation">
           <input type="number" class="form-control" id="document" formControlName="document" required>
           <div *ngIf="myForm.get('document')?.invalid && myForm.get('document')?.touched" class="invalid-feedback">
@@ -28,25 +28,26 @@
         </div>
       </div>
       <div class="col-md-6">
-        <label for="email" class="form-label">Email</label>
+        <label for="email" class="form-label">Email             </label>
         <input type="text" class="form-control" id="email" formControlName="email" required>
         <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched" class="invalid-feedback">
           Por favor ingrese una ciudad valida.
         </div>
       </div>
-      <div class="col-md-3">
-        <label for="password" class="form-label">Contraseña</label>
+      <div class="col-md-6">
+        <label for="password" class="form-label">Contraseña                  </label>
         <input type="password" class="form-control" id="password" formControlName="password" required>
         <div *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched" class="invalid-feedback">
           Por favor ingrese una dirección valida.
         </div>
       </div>
       <div class="col-12">
-        <button class="btn btn-primary" type="submit">Enviar formulario</button>
+        <button id="btn" class="btn btn-primary" type="submit">Enviar formulario</button>
       </div>
+      
     </form>
   
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="dismiss()">Cerrar</button>
+  <div  class="modal-footer">
+    <button type="button" id="btn"  (click)="dismiss()">Cerrar    </button>
   </div>

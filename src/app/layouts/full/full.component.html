@@ -11,68 +11,35 @@
   data-sidebar-position="absolute"
   data-header-position="absolute"
   data-boxed-layout="full"
-  style="display: flex; flex-direction: column; align-items: center; width: 100%;"
+  style="display: flex; flex-direction: column; align-items: center; max-width: 1200px; width: 100%; padding: 0px; margin: 0 auto;"
 >
-  <!-- ============================================================== -->
-  <!-- Topbar header - style you can find in topbar.scss -->
-  <!-- ============================================================== -->
-  <header class="topbar" data-navbarbg="skin5">
+  <!-- Topbar header -->
+  <header class="topbar" data-navbarbg="skin5" style="width: 100%; max-width: 1600px;">
     <nav class="d-flex top-navbar navbar-expand-lg navbar-dark">
-      <div
-        class="navbar-header"
-        [ngClass]="expandLogo ? 'expand-logo' : ''"
-        data-logobg="skin4"
+     
       >
-        <!-- Button to toggle sidebar on mobile -->
-        <a
-          (click)="showMobileMenu = !showMobileMenu"
-          class="nav-toggler waves-effect waves-light d-block d-lg-none"
-          href="javascript:void(0)"
-        >
-          <i [ngClass]="showMobileMenu ? 'bi bi-text-left fs-5' : 'bi bi-text-left fs-5'"></i>
-        </a>
-      </div>
-
-      <!-- ============================================================== -->
-      <!-- Navbar content - navigation links -->
-      <!-- ============================================================== -->
-      <div
-        class="navbar-collapse collapse"
-        id="navbarSupportedContent"
-        data-navbarbg="skin2"
-        [ngbCollapse]="!isCollapsed"
-      >
-        <app-navigation 
-          (toggleSidebar)="toggleSidebarType()"
-          class="w-120"
-          style="height: 120px;width: 1020px; line-height: 20px; padding: auto;"
-        ></app-navigation>
-      </div>
+      <app-navigation 
+      (toggleSidebar)="toggleSidebarType()"
+      class="w-100"
+      style="width: 100%; height: 100px; padding: 0;"
+    ></app-navigation>
+      
     </nav>
   </header>
-  
-  <!-- ============================================================== -->
-  <!-- Page wrapper for main content -->
-  <!-- ============================================================== -->
-  <div class="page-wrapper" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-    <!-- ============================================================== -->
-    <!-- Container fluid for page content -->
-    <!-- ============================================================== -->
-    <div class="container-fluid">
-      <!-- ============================================================== -->
-      <!-- Start Page Content -->
-      <!-- ============================================================== -->
-      <router-outlet></router-outlet>
-      <!-- ============================================================== -->
-      <!-- End Start Page Content -->
-      <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
 
-    <!-- ============================================================== -->
-    <!-- Footer -->
+  <!-- Page wrapper for main content -->
+  
+    <!-- Container fluid for page content -->
+    <div class="container-fluid" style="padding: 45px;">
+      <!-- Start Page Content -->
+      <router-outlet></router-outlet>
+      <!-- End Start Page Content -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+
     <!-- ============================================================== -->
     <footer class="footer text-center">
       Todos los derechos reservados, TALENTO TECH 2024.
@@ -118,9 +85,9 @@
 
     
     <!-- ============================================================== -->
-  </div>
-  <!-- ============================================================== -->
+  
+  <!-- ============================================================= -->
   <!-- End Page wrapper  -->
   <!-- ============================================================== -->
-</div>
+
 
