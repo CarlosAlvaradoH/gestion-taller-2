@@ -90,14 +90,19 @@ export const appoinmentsHour = [
 export const appoinmentStatus = [
     {
         id: 1,
-        message: "Completado"
+        message: "Completado",
+        color: "#00FF00"
+
     },
     {
         id: 2,
-        message: "En ejecucion"
+        message: "En ejecucion",
+        color: "#FFFF00"
     },
     {
         id: 3,
-        message: "Fallido"
+        message: "Fallido",
+        color: "#FF0000"
     },
+   
 ]
