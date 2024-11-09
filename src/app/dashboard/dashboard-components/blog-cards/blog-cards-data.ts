@@ -28,19 +28,19 @@ export const blogcards: blogcard[] = [
     {
         title: 'Alineación y Balanceo',
         subtitle: 'Vehículos y camionetas',
-        subtext: 'Utilizamos maquinaria de última tecnología para garantizar un servicio preciso y confiable..',
+        subtext: 'Utilizamos maquinaria de última tecnología para garantizar un servicio preciso y confiable.',
         image: '../../../../assets/images/bg/alineacion.jpg'
     },
     {
         title: 'Revisión de frenos y ABS',
         subtitle: 'Cambio de pastillas y líquido de frenos',
-        subtext: 'Contamos con técnicos especializados y certificados en el mantenimiento de frenos y discos de frenos.',
+        subtext: 'Contamos con técnicos especializados y certificados en el mantenimiento de frenos.',
         image: '../../../../assets/images/bg/frenado.jpg'
     },
     {
         title: 'Cambio de Aceite ',
-        subtitle: 'Contamos con las mejores marcas de aceites y consumibles para todo tipo de vehículo',
-        subtext: 'Productos garantizados .',
+        subtitle: 'Contamos con las mejores marcas de aceites.',
+        subtext: 'Productos garantizados, manejamos las mejores marcas para todo tipo de vehiculos .',
         image: '../../../../assets/images/bg/aceite.jpg'
     }
 
