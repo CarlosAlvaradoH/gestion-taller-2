@@ -1,11 +1,11 @@
 <div class="row">
-    <div class="col-md-6 col-lg-3" *ngFor='let blogcard of blogcards'>
+    <div class="col-md-6 col-lg-4" *ngFor='let blogcard of blogcards'>
         <div class="card">
             <img [src]=blogcard.image alt="blogs" class="card-img-top h-50">
             <div class="card-body text-wrap">
                 <h4 class="card-title d-flex p-2">{{blogcard.title}}</h4>
                 <h6 class="card-subtitle d-flex p-2">{{blogcard.subtitle}}</h6>
-                <p class="d-flex p-2">{{blogcard.subtext}}</p>
+                <p class="d-flex  p-2">{{blogcard.subtext}}</p>
             </div>
         </div>
     </div>

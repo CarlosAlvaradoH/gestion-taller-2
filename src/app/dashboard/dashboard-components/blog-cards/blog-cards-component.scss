@@ -1,7 +1,7 @@
 /* Card container spacing */
 .row.mt-4.mb-4 {
-    margin-top: 30px;  /* Extra space above the testimonials */
-    margin-bottom: 30px; /* Extra space below the testimonials */
+    margin-top: 50px;  /* Extra space above the testimonials */
+    margin-bottom: 50px; /* Extra space below the testimonials */
 }
 
 /* Testimonial card styling */
@@ -13,15 +13,15 @@
     overflow: hidden;
     margin-bottom: 15px;
     padding: 10px; /* Espacio interno para el contenido */
-    border-radius: 10px; /* Bordes redondeados en toda la tarjeta */
+    border-radius: 50px; /* Bordes redondeados en toda la tarjeta */
 }
 
 .card-img-top {
-    width: 100%;
-    height: auto;
-    border-radius: 50%; /* Hace la imagen redonda */
+    width: 300px; /* Tamaño de la imagen */
+    height: 300px; /* Mantener altura igual para que sea redonda */
+    border-radius: 50%; /* Asegura que la imagen sea perfectamente redonda */
     object-fit: cover; /* Asegura que la imagen mantenga proporción */
-    margin-bottom: 10px; /* Espacio entre imagen y contenido */
+    margin: 0 auto 10px; /* Centra la imagen horizontalmente y añade espacio inferior */
 }
 
 .card-body {
