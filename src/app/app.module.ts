@@ -21,7 +21,6 @@ import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { ServicesService } from './services/services.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +42,6 @@ import { ServicesService } from './services/services.service';
     SidebarComponent,
   ],
   providers: [
-    ServicesService,
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
