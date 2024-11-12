@@ -28,6 +28,7 @@ getServices() {
     .subscribe({
       next: (response: Services | any) => {
         if (response) {
+          console.log("Respuesta", response)
           this.servicesSubject.next(response)
         }
       },

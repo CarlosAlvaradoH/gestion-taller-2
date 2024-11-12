@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-6 col-lg-4" *ngFor='let blogcard of blogcards'>
         <div class="card">
             <img [src]=blogcard.image alt="blogs" class="card-img-top h-50">
@@ -9,4 +9,18 @@
             </div>
         </div>
     </div>
+</div> -->
+<div class="row">
+    <div class="col-md-6 col-lg-4" *ngFor='let sv of availableServices let i = index'>
+        <div class="card">
+            <img [src]=blogcards[i].image alt="blogs" class="card-img-top h-50">
+            <div class="card-body text-wrap">
+                <h4 class="card-title d-flex p-2"><strong>{{sv.service_name}}</strong></h4>
+                <h6 class="card-subtitle d-flex p-2"><strong>{{sv.service_name}}</strong></h6>
+                <p class="d-flex  p-2 text-bg-info  bs-light-border-subtle text-align: center"><strong>{{sv.description}}</strong></p>
+            </div>
+        </div>
+    </div>
 </div>
+
+<button class="btn btn-success" (click)="imp()">Imp</button>
