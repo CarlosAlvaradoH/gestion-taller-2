@@ -13,7 +13,7 @@ export const appoinmentsDay = [
 },
 {
     day: 20241113,
-    message: "Miercoles 13 de Noviembre 2024"
+    message: "Miércoles 13 de Noviembre 2024"
 },
 {
     day: 20241114,
@@ -33,7 +33,7 @@ export const appoinmentsDay = [
 },
 {
     day: 20241120,
-    message: "Miercoles 20 de Noviembre 2024"
+    message: "Miércoles 20 de Noviembre 2024"
 },
 {
     day: 20241121,
@@ -53,7 +53,7 @@ export const appoinmentsDay = [
 },
 {
     day: 20241127,
-    message: "Miercoles 27 de Noviembre 2024"
+    message: "Miércoles 27 de Noviembre 2024"
 },
 {
     day: 20241128,
@@ -68,7 +68,7 @@ export const appoinmentsDay = [
 
 
 
-export const appoinmentsHour = [
+export const appoinmentsShift = [
 {
     turn: 1,
     message: "08:00 am - 10:00 am"
@@ -78,11 +78,11 @@ export const appoinmentsHour = [
     message: "10:00 am - 12:00 pm"
 },
 {
-    turn: 1,
+    turn: 3,
     message: "02:00 pm - 04:00 pm"
 },
 {
-    turn: 1,
+    turn: 4,
     message: "04:00 pm - 06:00 pm"
 },
 ]
@@ -90,7 +90,7 @@ export const appoinmentsHour = [
 export const appoinmentStatus = [
     {
         id: 1,
-        message: "Completado",
+        message: "Asignado",
         color: "#00FF00"
 
     },
@@ -101,6 +101,11 @@ export const appoinmentStatus = [
     },
     {
         id: 3,
+        message: "Completado",
+        color: "#FF0000"
+    },
+    {
+        id: 4,
         message: "Fallido",
         color: "#FF0000"
     },

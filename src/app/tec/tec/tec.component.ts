@@ -1,59 +1,58 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subscription } from 'rxjs';
+import { Doc } from 'src/app/interfaces/appoinment.Interface';
+import { AppoinmentService } from 'src/app/services/appoinment.service';
+import { AppointmentViewComponent } from 'src/app/shared/appointmentView/appointmentView.component';
 
-interface Tarea {
-  nombre: string;
-  completada: boolean;
-}
 
-interface Mecanico {
-  nombre: string;
-  tareas: Tarea[];
-}
 
 @Component({
   selector: 'app-tec',
   templateUrl: './tec.component.html',
   styleUrls: ['./tec.component.scss']
 })
-export class TecComponent {
-  mecanicos: Mecanico[] = [
-    {
-      nombre: 'Mecánico 1',
-      tareas: [
-        { nombre: 'Revisar motor', completada: false },
-        { nombre: 'Cambiar aceite', completada: false }
-      ]
-    },
-    {
-      nombre: 'Mecánico 2',
-      tareas: [
-        { nombre: 'Ajustar suspensión', completada: false },
-        { nombre: 'Reemplazar batería', completada: false }
-      ]
-    },
-    {
-      nombre: 'Mecánico 3',
-      tareas: [
-        { nombre: 'Ajustar suspensión', completada: false },
-        { nombre: 'Reemplazar batería', completada: false }
-      ]
-    },
-    {
-      nombre: 'Mecánico 4',
-      tareas: [
-        { nombre: 'Ajustar suspensión', completada: false },
-        { nombre: 'Reemplazar batería', completada: false }
-      ]
-    }
-  ];
+export class TecComponent implements OnInit {
+  appoinments!: Doc[] | [];
+  private subscription: Subscription = new Subscription();
 
-  agregarTarea(mecanico: Mecanico, tareaNombre: string): void {
-    if (tareaNombre.trim()) {
-      mecanico.tareas.push({ nombre: tareaNombre, completada: false });
-    }
-  }
+  constructor(
+    private appoinmentSv: AppoinmentService,
+    private modalService: NgbModal
+  ){}
 
-  completarTarea(tarea: Tarea): void {
-    tarea.completada = !tarea.completada;
+  ngOnInit(): void {
+    this.subscription = this.appoinmentSv.appoinments$.subscribe(appoinments => {
+      this.appoinments = appoinments;
+    });
+
+    this.appoinmentSv.getAppoinments();
+    console.log("Appos en el componente: ", this.appoinments)
+
   }
+  
+//   agregarTarea(mecanico: Mecanico, tareaNombre: string): void {
+//     if (tareaNombre.trim()) {
+//       mecanico.tareas.push({ nombre: tareaNombre, completada: false });
+//     }
+//   }
+
+//   completarTarea(tarea: Tarea): void {
+//     tarea.completada = !tarea.completada;
+//   }
+
+viewAppointment(appo: any) {
+  const modalView = this.modalService.open(AppointmentViewComponent, { ariaLabelledBy: 'modal-basic-title' })
+  modalView.componentInstance.appointment = appo;
+  modalView.componentInstance.rol = "Mechanic";
+
+  modalView.result.then((result) => {
+    console.log(`Closed with: ${result}`);
+    // Puedes manejar la lógica aquí cuando el modal se cierre con un resultado
+  }, (reason) => {
+    console.log(`Dismissed ${reason}`);
+    // Puedes manejar la lógica aquí cuando el modal se cierre sin un resultado
+  });
+}
+
 }

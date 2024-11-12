@@ -1,5 +1,7 @@
 // src/environments/environment.ts
-const apiUrl = 'https://api-workshop-app.onrender.com/api/'
+// const apiUrl = 'https://api-workshop-app.onrender.com/api/'
+const apiUrl = 'http://localhost:4500/api/'
+
 
 export const environment = {
     production: false,
@@ -12,6 +14,8 @@ export const environment = {
     getUserListCustomer: `${apiUrl}user/listClients`,
     patchUserActiveCustomer: `${apiUrl}user/activeClients`,
     putUpdateProfile: `${apiUrl}user/updateProfile`,
+    getlistMechanic: `${apiUrl}user/listMechanic`, // Se puede usar paginacion /1
+    
 
     postSvCreate: `${apiUrl}service/create-service`,
     getSv: `${apiUrl}service/services`,
@@ -21,18 +25,11 @@ export const environment = {
     delSvHardDelete: `${apiUrl}service/permanent-erase`,
     putSvReactivate: `${apiUrl}service/reactivate`,
     
-    postApptCreate: `${apiUrl}service/create-appointment`,
+    postApptCreate: `${apiUrl}appointment/create-appointment`,
     getApptTest: `${apiUrl}`,
     getApptGet: `${apiUrl}service/get-appointment`,
     patchApptUpdate: `${apiUrl}service/update-appointment`,
     delApptDelete: `${apiUrl}service/delete-appointment`,
+    getApptList: `${apiUrl}appointment/list-appointment`,
     
-    getTecTest: `${apiUrl}mechanic/test-mechanic`,
-    postTecCreate: `${apiUrl}mechanic/create-mechanic`,
-    getTecList: `${apiUrl}mechanic/list-mechanics`,
-    getTecGet: `${apiUrl}mechanic/get-mechanics`,
-    patchTecUpdate: `${apiUrl}mechanic/update-mechanic`,
-    patchTecDelete: `${apiUrl}mechanic/delete-mechanic`,
-    patchTecHardDelete: `${apiUrl}mechanic/permanent-erase`,
-    delTecLogin: `${apiUrl}mechanic/loginMechanic`,
   };  

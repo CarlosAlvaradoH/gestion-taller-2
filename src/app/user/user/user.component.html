@@ -1,3 +1,6 @@
+<div class="float-end">
+    <button class="btn btn-primary mb-4" (click)="appoCreate()">Crear Cita</button>
+  </div>
 
 <div class="service-selection-wrapper my-4">
     <!-- Carrusel de Clases de Vehículos -->
@@ -36,58 +39,53 @@
     </div>
 
     <!-- Tabla de Selección de Servicios -->
-    <h2 class="text-center mb-3">Selecciona un Servicio</h2>
-    <div class="table-responsive">
-        <table class="table table-bordered table-hover">
-            <thead class="table-light">
+    <div class="text-center mt-4">
+        <div class="tabla-mecanicos mt-4">
+          <h2>Mis Servicios</h2>
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
                 <tr>
-                    <th>Servicio</th>
-                    <th>Descripción</th>
-                    <th>Seleccionar</th>
+                  <th>Mecánico</th>
+                  <th>Cliente</th>
+                  <th>Fecha</th>
+                  <th>Turno</th>
+                  <th>Status</th>
+                  <th>Servicio</th>
+                  <th>Precio</th>
+                  <th>Opcion</th>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Certificación Técnico-Mecánica</td>
-                    <td>Garantiza que tu vehículo cumple con los estándares de seguridad y rendimiento.</td>
-                    <td><input type="checkbox" name="servicio" value="certificacion"></td>
+              </thead>
+              <tbody>
+                <tr *ngFor="let appo of appoinments">
+                  <td>
+                    <small>{{appo.idMechanic.name}} {{appo.idMechanic.last_name}}</small>
+                  <td>
+                    <small>{{appo.idClient.name}} {{appo.idClient.last_name}}</small>
+                  </td>
+                  <td>
+                    <small>{{appo.day}}</small>
+                  </td>
+                  <td>
+                    <small>{{appo.shift}}</small>
+                  </td>
+                  <td>
+                    <small>{{appo.status}}</small>
+                  </td>
+                  <td>
+                    <small>{{appo.services}}</small>
+                  </td>
+                  <td>
+                    <small>$ {{appo.total | number}}</small>
+                  </td>
+                  <td>
+                    <button (click)="viewAppointment(appo)" class="btn btn-success btn-sm"><small>Log</small></button>
+                  </td>
                 </tr>
-                <tr>
-                    <td>Cambio de Aceite</td>
-                    <td>Mantén el motor de tu vehículo en óptimas condiciones con un cambio de aceite profesional.</td>
-                    <td><input type="checkbox" name="servicio" value="cambio_aceite"></td>
-                </tr>
-                <tr>
-                    <td>Balanceo</td>
-                    <td>Asegura un desgaste uniforme de los neumáticos y una conducción suave.</td>
-                    <td><input type="checkbox" name="servicio" value="balanceo"></td>
-                </tr>
-                <tr>
-                    <td>Revisión de Luces y Eléctrica</td>
-                    <td>Verificación de luces y sistema eléctrico para tu seguridad y visibilidad.</td>
-                    <td><input type="checkbox" name="servicio" value="revision_luces"></td>
-                </tr>
-                <tr>
-                    <td>Sincronización</td>
-                    <td>Ajusta el motor para un rendimiento óptimo y eficiencia de combustible.</td>
-                    <td><input type="checkbox" name="servicio" value="sincronizacion"></td>
-                </tr>
-                <tr>
-                    <td>Revisión Eléctrica</td>
-                    <td>Verifica el estado de toda la red eléctrica y el sistema de computadora del vehículo.</td>
-                    <td><input type="checkbox" name="servicio" value="electrica"></td>
-                </tr>
-                <tr>
-                    <td>Revisión de Frenos</td>
-                    <td>Inspecciona el estado de las pastillas y discos de freno para garantizar la seguridad.</td>
-                    <td><input type="checkbox" name="servicio" value="frenos"></td>
-                </tr>
-                <tr>
-                    <td>Certificado de Revisión Técnico Mecánica</td>
-                    <td>Verifica que el vehículo esté en condiciones óptimas para circular en las vías públicas.</td>
-                    <td><input type="checkbox" name="servicio" value="certificado_tecnico"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+ 
 </div>

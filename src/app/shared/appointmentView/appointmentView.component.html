@@ -1,0 +1,45 @@
+<div class="modal-header">
+  <h4 class="modal-title">Detalle de Cita</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+<div class="modal-body">
+  <div  class="row g-3 needs-validation" novalidate>
+    
+    <div class="col-12">
+      <label class="form-label">Cliente</label>
+      <h6>{{appointment.idClient.name}} {{appointment.idClient.last_name}}</h6>
+   
+    </div>
+    
+    <div class="col-12">
+      <label class="form-label">Mecanico</label>
+      <h6>{{appointment.idMechanic.name}} {{appointment.idMechanic.last_name}}</h6>
+    
+    </div>
+    
+    <div class="col-12">
+      <label class="form-label">Fecha</label>
+      <h6>{{appointment.day}}</h6>
+    </div>
+    
+    <div class="col-12">
+      <label class="form-label">Hora</label>
+     <h6>{{appointment.shift}}</h6>
+     
+    </div>
+    
+    <div class="col-12">
+      <label class="form-label">Servicios</label>
+      <h6 *ngFor="let sv of appointment.services">
+        <li>{{sv}}</li>
+      </h6>
+     
+    </div>
+
+    <div class="col-12" *ngIf="rol != 'Mechanic'">
+      <label class="form-label">Precio</label>
+      <h6>$ {{appointment.total | number}}</h6>
+    </div>
+
+  </div>
+</div>

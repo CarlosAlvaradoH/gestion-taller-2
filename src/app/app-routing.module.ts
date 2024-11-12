@@ -33,7 +33,7 @@ export const Approutes: Routes = [
         path: 'tec',
         loadChildren: () => import('./tec/tec.module').then(m => m.TecModule),
         canActivate: [RoleGuard],
-        data: { role: 'Tecnico' }
+        data: { role: 'Mechanic' }
       },
       {
         path: 'user',

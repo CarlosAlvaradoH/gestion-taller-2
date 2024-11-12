@@ -75,7 +75,7 @@ export class NavigationComponent implements OnInit, AfterViewInit {
       case 'Admin':
         this.navbarItems.push({ url: '/admin', title: 'Administracion' })
         break;
-      case 'POST':
+      case 'Mechanic':
         this.navbarItems.push({ url: '/tec', title: 'Ver Agenda' })
         break;
       case 'Client':

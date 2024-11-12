@@ -1,6 +1,6 @@
 
 <!-- src/app/dashboard/dashboard.component.html -->
-<div class="agenda-container">
+<!-- <div class="agenda-container">
     <div class="tagenda">
     <h1>Agenda de tareas diarias</h1>
     </div>
@@ -19,5 +19,55 @@
         <button (click)="agregarTarea(mecanico, tareaInput.value); tareaInput.value=''">Agregar Tarea</button>
       </div>
     </div>
-  </div>
+  </div> -->
+
   
+  <div class="text-center mt-4">
+    <div class="tabla-mecanicos mt-4">
+      <h2>Listado de Servicios</h2>
+      <div *ngIf="appoinments.length >= 1; else noAppoinments" class="table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th>Mecánico</th>
+              <th>Cliente</th>
+              <th>Fecha</th>
+              <th>Turno</th>
+              <th>Status</th>
+              <th>Servicio</th>
+              <th>Opcion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let appo of appoinments">
+              <td>
+                <small>{{appo.idMechanic.name}} {{appo.idMechanic.last_name}}</small>
+              <td>
+                <small>{{appo.idClient.name}} {{appo.idClient.last_name}}</small>
+              </td>
+              <td>
+                <small>{{appo.day}}</small>
+              </td>
+              <td>
+                <small>{{appo.shift}}</small>
+              </td>
+              <td>
+                <small>{{appo.status}}</small>
+              </td>
+              <td>
+                <small>{{appo.services[0]}}</small>
+              </td>
+              <td>
+                <button (click)="viewAppointment(appo)" class="btn btn-success btn-sm"><small>Detalle</small></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noAppoinments>
+    <p>No tienes servicios asignados.</p>
+    <img src="../../../assets/images/tecnicos/noAppointments.png"  alt="Sin Servicios" style="height: 70vh;">
+  </ng-template>
