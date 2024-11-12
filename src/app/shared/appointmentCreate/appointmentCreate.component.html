@@ -4,14 +4,7 @@
 </div>
 <div class="modal-body">
   <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
-    
-    <!-- <div class="col-12">
-      <label for="idMechanic" class="form-label">Tecnico</label>
-      <input type="text" class="form-control" id="idMechanic" formControlName="idMechanic" required>
-      <div *ngIf="myForm.get('idMechanic')?.invalid && myForm.get('idMechanic')?.touched" class="invalid-feedback">
-        El nombre es un dato obligatorio.
-      </div>
-    </div> -->
+ 
     <div class="col-12">
       <label for="idMechanic" class="form-label">Tecnico</label>
       <select class="form-select" aria-label="Default select example" id="idMechanic" formControlName="idMechanic" required>
@@ -23,17 +16,9 @@
       </div>
     </div>
     
-    <!-- <div class="col-12">
-      <label for="day" class="form-label">Fecha</label>
-      <input type="text" class="form-control" id="day" formControlName="day" required>
-      <div *ngIf="myForm.get('day')?.invalid && myForm.get('day')?.touched" class="invalid-feedback">
-        El apellido es un dato obligatorio.
-      </div>
-    </div> -->
-    
     <div class="col-12">
       <label for="day" class="form-label">Fecha</label>
-      <select class="form-select" aria-label="Default select example"id="day" formControlName="day" required>
+      <select class="form-select" (click)="filterTec()" aria-label="Default select example"id="day" formControlName="day" required>
         <!-- <option selected>Open this select menu</option> -->
         <option value="{{day.day}}" *ngFor="let day of days">{{day.message}}</option>
       </select>
@@ -41,16 +26,7 @@
         El apellido es un dato obligatorio.
       </div>
     </div>
-    
-    <!-- <div class="col-12">
-      <label for="shift" class="form-label">Horario</label>
-      <div class="input-group has-validation">
-        <input type="text" class="form-control" id="shift" formControlName="shift" required>
-        <div *ngIf="myForm.get('shift')?.invalid && myForm.get('shift')?.touched" class="invalid-feedback">
-          El número de documento es obligatorio.
-        </div>
-      </div>
-    </div> -->
+
     <div class="col-12">
       <label for="shift" class="form-label">Horario</label>
       <div class="input-group has-validation">
@@ -63,14 +39,7 @@
         </div>
       </div>
     </div>
-    
-    <!-- <div class="col-12">
-      <label for="services" class="form-label">Seleccione los Servicios</label>
-      <input type="services" class="form-control" id="services" formControlName="services" required>
-      <div *ngIf="myForm.get('services')?.invalid && myForm.get('services')?.touched" class="invalid-feedback">
-        Por favor ingrese un correo electrónico válido.
-      </div>
-    </div> -->
+
     <div class="col-12">
     <label for="services">Servicios</label>
     <div class="form-check" *ngFor="let sv of availableServices">

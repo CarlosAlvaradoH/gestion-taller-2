@@ -81,6 +81,14 @@ export class AppointmentCreateComponent implements OnInit {
     }
   }
 
+  filterTec(){
+    console.log(
+      "idMecanico: ", this.myForm.controls['idMechanic'].value,
+      "Day: ", this.myForm.controls['day'].value,
+      "Serv disponibles: ", this.availableServices 
+    )
+  }
+
 
 
   updateAppointment() { }

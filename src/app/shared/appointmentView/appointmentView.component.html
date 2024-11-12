@@ -3,38 +3,51 @@
   <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
 </div>
 <div class="modal-body">
-  <div  class="row g-3 needs-validation" novalidate>
-    
+  <div class="row g-3 needs-validation" novalidate>
+
     <div class="col-12">
       <label class="form-label">Cliente</label>
       <h6>{{appointment.idClient.name}} {{appointment.idClient.last_name}}</h6>
-   
     </div>
-    
+
     <div class="col-12">
       <label class="form-label">Mecanico</label>
       <h6>{{appointment.idMechanic.name}} {{appointment.idMechanic.last_name}}</h6>
-    
     </div>
-    
+
     <div class="col-12">
       <label class="form-label">Fecha</label>
       <h6>{{appointment.day}}</h6>
     </div>
-    
+
     <div class="col-12">
       <label class="form-label">Hora</label>
-     <h6>{{appointment.shift}}</h6>
-     
+      <h6>{{appointment.shift}}</h6>
     </div>
-    
+
     <div class="col-12">
       <label class="form-label">Servicios</label>
       <h6 *ngFor="let sv of appointment.services">
         <li>{{sv}}</li>
       </h6>
-     
     </div>
+
+    <div class="col-12" *ngIf="rol != 'Client';else comments ">
+      <label class="form-label">Novedades:</label>
+      <textarea class="form-control" aria-label="With textarea" [placeholder]="appointment.comments"></textarea>
+      <div class="float-end">
+        <button class="btn btn-success btn-sm mt-2">Agregar Comentarios</button>
+      </div>
+    </div>
+
+    <ng-template #comments>
+      <div class="col-12">
+        <label class="form-label">Novedades:</label>
+        <h6 *ngIf="!appointment.comments">Ninguna</h6>
+        <p *ngIf="appointment.comments"></p>
+      </div>
+    </ng-template>
+    
 
     <div class="col-12" *ngIf="rol != 'Mechanic'">
       <label class="form-label">Precio</label>

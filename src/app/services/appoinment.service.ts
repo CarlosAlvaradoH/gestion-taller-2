@@ -13,7 +13,7 @@ import { AppointmentsResCreate } from '../interfaces/appoinmentCreate.Interface'
 })
 export class AppoinmentService {
 
-  private getlistMechanic = environment.getApptList;
+  private getApptList = environment.getApptList;
   private postApptCreate = environment.postApptCreate;
   private appoinmentsSubject = new BehaviorSubject<Doc[]>([]);
   public appoinments$ = this.appoinmentsSubject.asObservable();
@@ -42,7 +42,7 @@ export class AppoinmentService {
 
   getAppoinments() {
     this.httpSv
-      .request("GET", this.getlistMechanic)
+      .request("GET", this.getApptList)
       .pipe(
         catchError(error => {
           // Manejamos el error aquí y mostramos un alert

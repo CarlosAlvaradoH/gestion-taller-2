@@ -29,13 +29,27 @@ export class UserComponent implements OnInit {
 
     this.appoinmentSv.getAppoinments();
     this.techinicianSv.getTechnicians();
-  }
-;
+    console.log('Dia de hoy: ', this.getCurrentDateAsNumber());
+  };
+
+  getCurrentDateAsNumber(): number {
+    const currentDate = new Date();
+    
+    // Obtener el año, mes y día
+    const year = currentDate.getFullYear();
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Los meses son base 0, se suma 1 y se agrega un cero a la izquierda si es necesario
+    const day = currentDate.getDate().toString().padStart(2, '0'); // Se agrega un cero a la izquierda si es necesario
+    
+    // Unir el año, mes y día como un solo número
+    const formattedDate = `${year}${month}${day}`;
+    return parseInt(formattedDate, 10);
+  }// Resultado: 20241112
+  
 
   viewAppointment(appo: any) {
     const modalView = this.modalService.open(AppointmentViewComponent, { ariaLabelledBy: 'modal-basic-title' })
     modalView.componentInstance.appointment = appo;
-    modalView.componentInstance.rol = "Admin";
+    modalView.componentInstance.rol = "Client";
 
     modalView.result.then((result) => {
       console.log(`Closed with: ${result}`);
