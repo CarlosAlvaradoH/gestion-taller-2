@@ -1,91 +1,86 @@
 <div class="float-end">
-    <button class="btn btn-primary mb-4" (click)="appoCreate()">Crear Cita</button>
-  </div>
+  <button class="btn btn-primary mb-4" (click)="appoCreate()">Crear Cita</button>
+</div>
 
 <div class="service-selection-wrapper my-4">
-    <!-- Carrusel de Clases de Vehículos -->
-    <div id="vehicleCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../../../assets/images/users/sedan.jpg" class="d-block w-100" alt="Sedán">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Sedán</h5>
-                    <p>Vehículo de uso diario, perfecto para familias.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../../../assets/images/users/suv.jpg" class="d-block w-100" alt="SUV">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>SUV</h5>
-                    <p>Vehículo deportivo utilitario ideal para todo terreno.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../../../assets/images/users/truck.jpg" class="d-block w-100" alt="Camioneta">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Camioneta</h5>
-                    <p>Perfecta para transporte de carga y grandes viajes.</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#vehicleCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#vehicleCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>
-    </div>
-
-    <!-- Tabla de Selección de Servicios -->
-    <div class="text-center mt-4">
-        <div class="tabla-mecanicos mt-4">
-          <h2>Mis Servicios</h2>
-          <div class="table-responsive">
-            <table class="table align-middle">
-              <thead>
-                <tr>
-                  <th>Mecánico</th>
-                  <th>Cliente</th>
-                  <th>Fecha</th>
-                  <th>Turno</th>
-                  <th>Status</th>
-                  <th>Servicio</th>
-                  <th>Precio</th>
-                  <th>Opcion</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let appo of appoinments">
-                  <td>
-                    <small>{{appo.idMechanic.name}} {{appo.idMechanic.last_name}}</small>
-                  <td>
-                    <small>{{appo.idClient.name}} {{appo.idClient.last_name}}</small>
-                  </td>
-                  <td>
-                    <small>{{appo.day}}</small>
-                  </td>
-                  <td>
-                    <small>{{appo.shift}}</small>
-                  </td>
-                  <td>
-                    <small>{{appo.status}}</small>
-                  </td>
-                  <td>
-                    <small>{{appo.services}}</small>
-                  </td>
-                  <td>
-                    <small>$ {{appo.total | number}}</small>
-                  </td>
-                  <td>
-                    <button (click)="viewAppointment(appo)" class="btn btn-success btn-sm"><small>Log</small></button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+  <!-- Carousel for Vehicle Types -->
+  <div id="vehicleCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../../../assets/images/users/sedan.jpg" class="d-block w-100" alt="Sedán">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Sedán</h5>
+          <p>Vehículo de uso diario, perfecto para familias.</p>
         </div>
       </div>
+      <div class="carousel-item">
+        <img src="../../../assets/images/users/suv.jpg" class="d-block w-100" alt="SUV">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>SUV</h5>
+          <p>Vehículo deportivo utilitario ideal para todo terreno.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../../assets/images/users/truck.jpg" class="d-block w-100" alt="Camioneta">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Camioneta</h5>
+          <p>Perfecta para transporte de carga y grandes viajes.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#vehicleCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#vehicleCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+  <!-- Table for Appointments -->
+  <div class="text-center mt-4">
+    <div class="tabla-mecanicos mt-4">
+      <h2>Mis Servicios</h2>
+      <div class="table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th>Mecánico</th>
+              <th>Cliente</th>
+              <th>Fecha</th>
+              <th>Turno</th>
+              <th>Status</th>
+              <th>Servicio</th>
+              <th>Precio</th>
+              <th>Opción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let appo of appoinments">
+              <td><small>{{ appo.idMechanic.name }} {{ appo.idMechanic.last_name }}</small></td>
+              <td><small>{{ appo.idClient.name }} {{ appo.idClient.last_name }}</small></td>
+              <td><small>{{ appo.day }}</small></td>
+              <td><small>{{ appo.shift }}</small></td>
+              <td><small>{{ appo.status }}</small></td>
+              <td><small>{{ appo.services }}</small></td>
+              <td><small>$ {{ appo.total | number }}</small></td>
+              <td>
+                <button (click)="viewAppointment(appo)" class="btn btn-success btn-sm">
+                  <small>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-bookmark" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8" />
+                      <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2" />
+                      <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z" />
+                    </svg>
+                  </small>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
  
-</div>
