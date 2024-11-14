@@ -1,6 +1,6 @@
 // src/environments/environment.ts
-// const apiUrl = 'https://api-workshop-app.onrender.com/api/'
-const apiUrl = 'http://localhost:4500/api/'
+const apiUrl = 'https://api-workshop-app.onrender.com/api/'
+// const apiUrl = 'http://localhost:4500/api/'
 
 
 export const environment = {

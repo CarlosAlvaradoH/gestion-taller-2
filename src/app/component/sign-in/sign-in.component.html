@@ -25,10 +25,10 @@
 
   <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
     <div class="col-12">
-      <label for="email" class="form-label">Correo valido</label>
+      <label for="email" class="form-label">Correo válido</label>
       <input type="text" class="form-control" id="email" formControlName="email" required>
       <div *ngIf="!emailError" class="invalid-feedback">
-        Por favor introduzca un correo valido.
+        Por favor introduzca un correo válido.
       </div>
     </div>
   

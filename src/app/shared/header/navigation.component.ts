@@ -6,6 +6,7 @@ import { SignUpComponent } from 'src/app/component/sign-up/sign-up.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/interfaces/userInterface';
 import { Router } from '@angular/router';
+import { UserInfoComponent } from 'src/app/component/userInfo/user-info.component';
 
 declare var $: any;
 
@@ -73,7 +74,7 @@ export class NavigationComponent implements OnInit, AfterViewInit {
   setUserOptions(role: string) {
     switch (role) {
       case 'Admin':
-        this.navbarItems.push({ url: '/admin', title: 'Administracion' })
+        this.navbarItems.push({ url: '/admin', title: 'Administración' })
         break;
       case 'Mechanic':
         this.navbarItems.push({ url: '/tec', title: 'Ver Agenda' })
@@ -84,6 +85,14 @@ export class NavigationComponent implements OnInit, AfterViewInit {
       default:
         return
     }
+  }
+
+  userInfo(){
+    this.modalService.open(UserInfoComponent, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      console.log(`Closed with: ${result}`);
+    }, (reason) => {
+      console.log(`Dismissed ${reason}`);
+    });
   }
 
   // This is for Notifications

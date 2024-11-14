@@ -10,7 +10,7 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   request<T>(
-    method: 'GET' | 'POST' | 'PATCH' | 'DELETE',
+    method: 'GET' | 'POST' | 'PATCH' | 'DELETE' | "PUT",
     url: string,
     body: any = null,
     params: HttpParams = new HttpParams(),
@@ -22,6 +22,8 @@ export class HttpService {
         return this.http.post<T>(url, body, { params });
       case 'PATCH':
         return this.http.patch<T>(url, body, { params });
+      case 'PUT':
+        return this.http.put<T>(url, { params });
       case 'DELETE':
         return this.http.delete<T>(url, { params });
       default:

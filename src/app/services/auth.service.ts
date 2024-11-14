@@ -22,6 +22,8 @@ export class AuthService {
   constructor(private httpSv: HttpService) { }
 
   login(user: any){
+    console.log("URL: ", this.postUserLogin);
+    console.log("login: ", user);
     this.httpSv
     .request("POST", this.postUserLogin, user)
     .pipe(
@@ -69,6 +71,39 @@ export class AuthService {
           alert('Solicitud exitosa, ya puedes iniciar sesion');
           // Guardar cierta información en localStorage, por ejemplo, un token
           // localStorage.setItem('miToken', response.token);
+        }
+      },
+      error: () => {
+        // Este bloque es opcional porque ya manejamos el error en catchError
+      },
+      complete: () => {
+        console.log('Operación completada');
+      }
+    });
+  };
+
+  updateUser(user: any){
+    console.log("URL: ", this.putUpdateProfile);
+    console.log("UserUpd: ", user);
+    console.log("UserUpd: ", JSON.stringify(user));
+    this.httpSv
+    .request("PUT", this.putUpdateProfile, user)
+    .pipe(
+      catchError(error => {
+        // Manejamos el error aquí y mostramos un alert
+        alert('Error al realizar la solicitud: ' + error.message);
+        return of(null); // Retornamos un Observable vacío para finalizar la secuencia
+      })
+    )
+    .subscribe({
+      next: (response:any) => {
+        if (response) {
+          // Lógica en caso de éxito
+          alert(response.message);
+          console.log('Actualizacion Exitosa: ', response);
+          // Guardar cierta información en localStorage, por ejemplo, un token
+          localStorage.setItem('user', JSON.stringify(response.user));
+          window.location.reload();
         }
       },
       error: () => {

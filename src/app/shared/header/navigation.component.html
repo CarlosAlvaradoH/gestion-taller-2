@@ -42,9 +42,7 @@
         <span class="ms-2"><strong>{{user!.name}} {{user!.last_name}}</strong></span>
       </a>
       <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
-        <a class="dropdown-item custom-button" href="javascript:void(0)">Ver Mi Historial</a>
-        <a class="dropdown-item custom-button" href="javascript:void(0)">Configuración</a>
-        <div class="dropdown-divider"></div>
+        <a class="dropdown-item custom-button" href="javascript:void(0)" (click)="userInfo()">Mi Perfil</a>
         <a class="dropdown-item custom-button" href="javascript:void(0)" (click)="logout()">Cerrar sesión</a>
       </div>
     </li>

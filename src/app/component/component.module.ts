@@ -16,6 +16,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ServicesComponent } from './works/works.component';
 import { DashboardModule } from '../dashboard/dashboard.module';
+import { UserInfoComponent } from './userInfo/user-info.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { DashboardModule } from '../dashboard/dashboard.module';
   declarations: [
     SignUpComponent,
     SignInComponent,
-    ServicesComponent
+    ServicesComponent,
+    UserInfoComponent
   ],
 })
 export class ComponentsModule { }
