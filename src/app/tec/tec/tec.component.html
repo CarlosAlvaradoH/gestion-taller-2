@@ -24,12 +24,11 @@
   
   <div class="text-center mt-4">
     <div class="tabla-mecanicos mt-4">
-      <h2>Listado de Servicios</h2>
+      <h2>Listado de Citas</h2>
       <div *ngIf="appoinments.length >= 1; else noAppoinments" class="table-responsive">
         <table class="table align-middle">
           <thead>
             <tr>
-              <th>Mecánico</th>
               <th>Cliente</th>
               <th>Fecha</th>
               <th>Turno</th>
@@ -40,8 +39,6 @@
           </thead>
           <tbody>
             <tr *ngFor="let appo of appoinments">
-              <td>
-                <small>{{appo.idMechanic.name}} {{appo.idMechanic.last_name}}</small>
               <td>
                 <small>{{appo.idClient.name}} {{appo.idClient.last_name}}</small>
               </td>

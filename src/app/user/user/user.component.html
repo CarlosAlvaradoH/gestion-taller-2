@@ -41,30 +41,26 @@
   <!-- Table for Appointments -->
   <div class="text-center mt-4">
     <div class="tabla-mecanicos mt-4">
-      <h2>Mis Servicios</h2>
+      <h2>Mis Citas</h2>
       <div class="table-responsive">
         <table class="table align-middle">
           <thead>
             <tr>
               <th>Mecánico</th>
-              <th>Cliente</th>
               <th>Fecha</th>
               <th>Turno</th>
               <th>Status</th>
               <th>Servicio</th>
-              <th>Precio</th>
               <th>Opción</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let appo of appoinments">
               <td><small>{{ appo.idMechanic.name }} {{ appo.idMechanic.last_name }}</small></td>
-              <td><small>{{ appo.idClient.name }} {{ appo.idClient.last_name }}</small></td>
               <td><small>{{ appo.day }}</small></td>
               <td><small>{{ appo.shift }}</small></td>
               <td><small>{{ appo.status }}</small></td>
               <td><small>{{ appo.services }}</small></td>
-              <td><small>$ {{ appo.total | number }}</small></td>
               <td>
                 <button (click)="viewAppointment(appo)" class="btn btn-success btn-sm">
                   <small>

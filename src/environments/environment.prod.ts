@@ -4,7 +4,7 @@ const apiUrl = 'https://api-workshop-app.onrender.com/api/'
 export const environment = {
   production: false,
   postUserLogin: `${apiUrl}user/login`,
-  postUserRegister: `${apiUrl}user/register`,
+  postUserRegister: `${apiUrl}user/registerClients`,
   getUserProfile: `${apiUrl}user/profile`,
   putUserUpdate: `${apiUrl}user/updateUsers`,
   patchUserDelete: `${apiUrl}user/delete`,

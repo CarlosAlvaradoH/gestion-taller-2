@@ -81,7 +81,7 @@ export class NavigationComponent implements OnInit, AfterViewInit {
         this.navbarItems.push({ url: '/tec', title: 'Ver Agenda' })
         break;
       case 'Client':
-        this.navbarItems.push({ url: '/user', title: 'Agendar Servicio' })
+        this.navbarItems.push({ url: '/user', title: 'Agendar Cita' })
         break;
       default:
         return
