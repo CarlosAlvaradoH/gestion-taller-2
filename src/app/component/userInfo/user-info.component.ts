@@ -32,7 +32,6 @@ export class UserInfoComponent implements OnInit {
     this.myForm = this.formBuilder.group({
       name: [name ],
       last_name: [last_name ],
-      // document: ['' ],
       email: [email ],
       password: ['' ]
     });
