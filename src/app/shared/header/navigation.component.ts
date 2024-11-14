@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/interfaces/userInterface';
 import { Router } from '@angular/router';
 import { UserInfoComponent } from 'src/app/component/userInfo/user-info.component';
+import { UpdateUserComponent } from '../updateUser/updateUser.component';
 
 declare var $: any;
 
@@ -88,7 +89,7 @@ export class NavigationComponent implements OnInit, AfterViewInit {
   }
 
   userInfo(){
-    this.modalService.open(UserInfoComponent, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+    this.modalService.open(UpdateUserComponent, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       console.log(`Closed with: ${result}`);
     }, (reason) => {
       console.log(`Dismissed ${reason}`);

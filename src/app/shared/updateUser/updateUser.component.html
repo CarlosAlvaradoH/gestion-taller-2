@@ -1,0 +1,62 @@
+<div class="modal-header">
+  <h4 class="modal-title">Formulario de inscripcion</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="updForm" (ngSubmit)="update()" class="row g-3 needs-validation" novalidate>
+    
+    <div class="col-12">
+      <label for="name" class="form-label">Nombre</label>
+      <fieldset [disabled]="!editMode">
+        <input type="text" class="form-control" id="name" formControlName="name">
+      </fieldset>
+    </div>
+    
+    <div class="col-12">
+      <label for="last_name" class="form-label">Apellido</label>
+      <fieldset [disabled]="!editMode">
+        <input type="text" class="form-control" id="last_name" formControlName="last_name">
+      </fieldset>
+    </div>
+    
+    <!-- <div class="col-12">
+      <label for="document" class="form-label">Número de Documento</label>
+
+        <fieldset [disabled]="!editMode">
+          <input type="number" class="form-control" id="document" formControlName="document">
+        </fieldset>
+        <div *ngIf="myForm.get('document')?.invalid && myForm.get('document')?.touched" class="invalid-feedback">
+          El número de documento es obligatorio.
+        </div>
+      
+    </div> -->
+    
+    <div class="col-12">
+      <label for="email" class="form-label">Correo Electrónico</label>
+      <fieldset [disabled]="!editMode">
+        <input type="email" class="form-control" id="email" formControlName="email">
+      </fieldset>
+    </div>
+    
+    <div class="col-12">
+      <label for="password" class="form-label">Contraseña</label>
+      <fieldset [disabled]="!editMode">
+        <input type="password" class="form-control" id="password" formControlName="password" >
+      </fieldset>
+    </div>
+    
+    <div class="col-12" *ngIf="!editMode">
+      <div class="float-end">
+        <button id="btn" class="btn btn-primary mx-3" type="submit" (click)="editMode = !editMode">Actualizar</button>
+      </div>
+    </div>
+
+    <div class="col-12" *ngIf="editMode">
+      <div class="float-end">
+        <button id="btn" class="btn btn-primary mx-3" type="submit">Guardar</button>
+        <button class="btn btn-danger" (click)="close()">Cancelar</button>
+      </div>
+    </div>
+
+  </form>
+</div>

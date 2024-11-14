@@ -5,7 +5,7 @@ import { User } from 'src/app/interfaces/userInterface';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-sign-in',
+  selector: 'app-user-info',
   templateUrl: './user-info.component.html',
   styleUrls: ['./user-info.component.scss']
 })

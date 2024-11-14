@@ -23,7 +23,7 @@ export class HttpService {
       case 'PATCH':
         return this.http.patch<T>(url, body, { params });
       case 'PUT':
-        return this.http.put<T>(url, { params });
+        return this.http.put<T>(url, body);
       case 'DELETE':
         return this.http.delete<T>(url, { params });
       default:
