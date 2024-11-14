@@ -52,16 +52,13 @@ export class AppoinmentService {
       )
       .subscribe({
         next: (response: AppointmentsRes | any) => {
-          console.log("Response..!!: ", response)
           if (!response.appointments.docs) {
-            console.log("No llego nadita..!!");
             this.appoinmentsSubject.next([]);
             return
           }
           if (response) {
             // Lógica en caso de éxito
             // Guardar cierta información en localStorage, por ejemplo, un token
-            console.log('Diccionario: ', this.status)
             const resp = response.appointments.docs.map((app: Doc) => {
               app.day = this.setDay(app.day);
               app.shift = this.setShift(app.shift);
@@ -70,8 +67,6 @@ export class AppoinmentService {
               app.services = app.services.map(sv => this.setServices(sv));
 
             });
-            console.log('Appoinments: ', resp)
-            console.log('Appoinments rr: ', response)
             this.appoinmentsSubject.next(response.appointments.docs)
           }
         },
@@ -79,7 +74,6 @@ export class AppoinmentService {
           // Este bloque es opcional porque ya manejamos el error en catchError
         },
         complete: () => {
-          console.log('Operación completada');
         }
       });
   }
@@ -96,10 +90,9 @@ export class AppoinmentService {
       )
       .subscribe({
         next: (response: AppointmentsResCreate | any) => {
-          console.log("Creacion cita..!!: ", response)
 
           if (response) {
-            console.log("Creacion cita detalle..!!: ", response.appointment)
+
             this.getAppoinments();
             // Lógica en caso de éxito
             // Guardar cierta información en localStorage, por ejemplo, un token
@@ -110,7 +103,6 @@ export class AppoinmentService {
           // Este bloque es opcional porque ya manejamos el error en catchError
         },
         complete: () => {
-          console.log('Operación completada');
         }
       });
   }

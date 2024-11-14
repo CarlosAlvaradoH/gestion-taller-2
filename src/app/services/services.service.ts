@@ -28,7 +28,6 @@ getServices() {
     .subscribe({
       next: (response: Services | any) => {
         if (response) {
-          console.log("Respuesta", response)
           this.servicesSubject.next(response)
         }
       },
@@ -36,7 +35,6 @@ getServices() {
         // Este bloque es opcional porque ya manejamos el error en catchError
       },
       complete: () => {
-        console.log('Operación completada');
       }
     });
 }

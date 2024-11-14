@@ -41,11 +41,8 @@ export class UpdateUserComponent implements OnInit {
   }
   update() {
     if (this.updForm.valid) {
-      console.log('Formulario enviado con éxito:', this.updForm.value);
       this.userSv.updateUser(this.updForm.value);
     } else {
-      console.log('El formulario es inválido');
-      console.log('El form: ', this.updForm.controls['firstName']);
     }
   }
 

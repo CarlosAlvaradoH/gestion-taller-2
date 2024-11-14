@@ -37,7 +37,6 @@ export class AppointmentCreateComponent implements OnInit {
   ) {
     this.subscription = this.techinicianSv.technicians$.subscribe(technicians => {
       this.technicians = technicians;
-      console.log("Los tecnicos: ", technicians)
     });
 
     this.subscription = this.servicesSv.services$.subscribe(services => {
@@ -57,13 +56,10 @@ export class AppointmentCreateComponent implements OnInit {
 
   onSubmit() {
     if (this.myForm.valid) {
-      console.log('Formulario enviado con éxito:', this.myForm.value);
       // this.userSv.register(this.myForm.value); //todo: meter servicio para crear cita
       this.appoinmentSv.createAppoinments(this.myForm.value)
       this.close();
     } else {
-      console.log('El formulario es inválido');
-      console.log('El form: ', this.myForm.controls['firstName']);
     }
   }
 

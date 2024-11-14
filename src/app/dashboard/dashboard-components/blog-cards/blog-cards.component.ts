@@ -31,8 +31,5 @@ export class BlogCardsComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  imp(){
-    console.log("Servicios: ", this.availableServices)
-  }
 
 }

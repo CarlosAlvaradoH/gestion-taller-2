@@ -21,11 +21,9 @@ export class AppointmentViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.appointment)
   }
 
   updateAppointment() {
-    console.log(this.appointment)
   }
 
   // === Modal Manage ===

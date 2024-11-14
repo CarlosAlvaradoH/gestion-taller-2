@@ -37,7 +37,6 @@ export class TechnicianService {
           // Este bloque es opcional porque ya manejamos el error en catchError
         },
         complete: () => {
-          console.log('Operación completada');
         }
       });
   }

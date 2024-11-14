@@ -40,17 +40,13 @@ export class NavigationComponent implements OnInit, AfterViewInit {
 
   signIn() {
     this.modalService.open(SignInComponent, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-      console.log(`Closed with: ${result}`);
     }, (reason) => {
-      console.log(`Dismissed ${reason}`);
     });
   }
 
   signUp() {
     this.modalService.open(SignUpComponent, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-      console.log(`Closed with: ${result}`);
     }, (reason) => {
-      console.log(`Dismissed ${reason}`);
     });
   }
 
@@ -90,9 +86,7 @@ export class NavigationComponent implements OnInit, AfterViewInit {
 
   userInfo(){
     this.modalService.open(UpdateUserComponent, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-      console.log(`Closed with: ${result}`);
     }, (reason) => {
-      console.log(`Dismissed ${reason}`);
     });
   }
 

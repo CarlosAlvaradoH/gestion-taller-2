@@ -29,7 +29,6 @@ export class UserComponent implements OnInit {
 
     this.appoinmentSv.getAppoinments();
     this.techinicianSv.getTechnicians();
-    console.log('Dia de hoy: ', this.getCurrentDateAsNumber());
   };
 
   getCurrentDateAsNumber(): number {
@@ -52,10 +51,8 @@ export class UserComponent implements OnInit {
     modalView.componentInstance.rol = "Client";
 
     modalView.result.then((result) => {
-      console.log(`Closed with: ${result}`);
       // Puedes manejar la lógica aquí cuando el modal se cierre con un resultado
     }, (reason) => {
-      console.log(`Dismissed ${reason}`);
       // Puedes manejar la lógica aquí cuando el modal se cierre sin un resultado
     });
   }
@@ -66,10 +63,8 @@ export class UserComponent implements OnInit {
     // modalView.componentInstance.rol = "Admin";
 
     modalView.result.then((result) => {
-      console.log(`Closed with: ${result}`);
       // Puedes manejar la lógica aquí cuando el modal se cierre con un resultado
     }, (reason) => {
-      console.log(`Dismissed ${reason}`);
       // Puedes manejar la lógica aquí cuando el modal se cierre sin un resultado
     });
   }

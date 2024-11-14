@@ -22,8 +22,6 @@ export class AuthService {
   constructor(private httpSv: HttpService) { }
 
   login(user: any){
-    console.log("URL: ", this.postUserLogin);
-    console.log("login: ", user);
     this.httpSv
     .request("POST", this.postUserLogin, user)
     .pipe(
@@ -38,7 +36,7 @@ export class AuthService {
         if (response) {
           // Lógica en caso de éxito
           alert('Solicitud exitosa');
-          console.log("respuuu: ", response)
+    
           // Guardar cierta información en localStorage, por ejemplo, un token
           localStorage.setItem('token', response.token);
           localStorage.setItem('user', JSON.stringify(response.user));
@@ -49,7 +47,7 @@ export class AuthService {
         // Este bloque es opcional porque ya manejamos el error en catchError
       },
       complete: () => {
-        console.log('Operación completada');
+  
       }
     });
   };
@@ -77,15 +75,12 @@ export class AuthService {
         // Este bloque es opcional porque ya manejamos el error en catchError
       },
       complete: () => {
-        console.log('Operación completada');
+  
       }
     });
   };
 
   updateUser(user: any){
-    console.log("URL: ", this.putUpdateProfile);
-    console.log("UserUpd: ", user);
-    console.log("UserUpd: ", JSON.stringify(user));
     this.httpSv
     .request("PUT", this.putUpdateProfile, user)
     .pipe(
@@ -100,7 +95,7 @@ export class AuthService {
         if (response) {
           // Lógica en caso de éxito
           alert(response.message);
-          console.log('Actualizacion Exitosa: ', response);
+    
           // Guardar cierta información en localStorage, por ejemplo, un token
           localStorage.setItem('user', JSON.stringify(response.user));
           window.location.reload();
@@ -110,7 +105,7 @@ export class AuthService {
         // Este bloque es opcional porque ya manejamos el error en catchError
       },
       complete: () => {
-        console.log('Operación completada');
+  
       }
     });
   }

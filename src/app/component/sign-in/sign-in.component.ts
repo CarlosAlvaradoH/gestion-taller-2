@@ -33,14 +33,9 @@ export class SignInComponent implements OnInit {
     onSubmit() {
       if (this.myForm.valid) {
         this.UserSv.login(this.myForm.value);
-        console.log('Formulario enviado con éxito:', this.myForm.value);
-        console.log('El form: ', this.myForm.controls);
         this.close();
       } else {
-        console.log('El formulario es inválido');
-        console.log('El form: ', this.myForm.controls);
         this.emailError = this.myForm.controls['email'].errors!['required']
-        console.log('Invalido mail: ', this.emailError);
       }
     }
 

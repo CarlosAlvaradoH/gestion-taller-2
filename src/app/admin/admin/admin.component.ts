@@ -100,20 +100,14 @@ export class AdminComponent implements OnInit {
     mecanico.porcentaje = Math.round((tareasCompletadas / mecanico.tareas.length) * 100);
   }
 
-  imp(appo: any){
-    console.log(appo);
-  }
-
   viewAppointment(appo: any) {
     const modalView = this.modalService.open(AppointmentViewComponent, { ariaLabelledBy: 'modal-basic-title' })
     modalView.componentInstance.appointment = appo;
     modalView.componentInstance.rol = "Admin";
 
     modalView.result.then((result) => {
-      console.log(`Closed with: ${result}`);
       // Puedes manejar la lógica aquí cuando el modal se cierre con un resultado
     }, (reason) => {
-      console.log(`Dismissed ${reason}`);
       // Puedes manejar la lógica aquí cuando el modal se cierre sin un resultado
     });
   }

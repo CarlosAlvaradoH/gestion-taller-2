@@ -27,8 +27,6 @@ export class UserInfoComponent implements OnInit {
 
   ngOnInit(): void {
     let {name, last_name, email} = this.user
-    
-    console.log("Usuario: ", this.user)
     this.myForm = this.formBuilder.group({
       name: [name ],
       last_name: [last_name ],
@@ -41,11 +39,8 @@ export class UserInfoComponent implements OnInit {
     // Método que se llama cuando el formulario se envía
     onSubmit() {
       if (this.myForm.valid) {
-        console.log('Formulario enviado con éxito:', this.myForm.value);
         this.userSv.updateUser(this.myForm.value);
       } else {
-        console.log('El formulario es inválido');
-        console.log('El form: ', this.myForm.controls['firstName']);
       }
     }
 

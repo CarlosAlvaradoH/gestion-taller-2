@@ -27,7 +27,6 @@ export class TecComponent implements OnInit {
     });
 
     this.appoinmentSv.getAppoinments();
-    console.log("Appos en el componente: ", this.appoinments)
 
   }
   
@@ -47,10 +46,8 @@ viewAppointment(appo: any) {
   modalView.componentInstance.rol = "Mechanic";
 
   modalView.result.then((result) => {
-    console.log(`Closed with: ${result}`);
     // Puedes manejar la lógica aquí cuando el modal se cierre con un resultado
   }, (reason) => {
-    console.log(`Dismissed ${reason}`);
     // Puedes manejar la lógica aquí cuando el modal se cierre sin un resultado
   });
 }
